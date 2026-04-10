@@ -300,14 +300,29 @@ exports.handler = async function(event) {
   try {
     let liveData = "";
     try {
-      const MIRROR = "https://mainnet-public.mirrornode.hedera.com/api/v1";
-      const tokenRes = await fetch(`${MIRROR}/tokens/0.0.3210123`);
-      if (tokenRes.ok) {
-        const t = await tokenRes.json();
-        const rawSupply = BigInt(t.total_supply);
-        const supply = Number(rawSupply / 100n);
-        const supplyFormatted = supply.toLocaleString("en-US");
-        liveData = `\n\n=== LIVE BLOCKCHAIN DATA (just fetched) ===\nIMPORTANT: Always quote these exact numbers in your answer:\nSTEAM total minted supply on Hedera right now: ${supplyFormatted} STEAM (out of 1,000,000,000 max)\nCirculating supply is lower - check https://saucerswap.finance for live price and circulating supply.`;
+      // Try multiple mirror nodes
+      const mirrors = [
+        "https://mainnet-public.mirrornode.hedera.com/api/v1",
+        "https://mirrornode.hedera.com/api/v1",
+        "https://hedera-mainnet.public.blastapi.io/api/v1"
+      ];
+      
+      for (const mirror of mirrors) {
+        try {
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), 3000);
+          const tokenRes = await fetch(`${mirror}/tokens/0.0.3210123`, { signal: controller.signal });
+          clearTimeout(timeout);
+          
+          if (tokenRes.ok) {
+            const t = await tokenRes.json();
+            const rawSupply = BigInt(t.total_supply);
+            const supply = Number(rawSupply / 100n);
+            const supplyFormatted = supply.toLocaleString("en-US");
+            liveData = `\n\n=== LIVE BLOCKCHAIN DATA ===\nSTEAM total minted supply right now: ${supplyFormatted} STEAM\nMax supply cap: 1,000,000,000 STEAM\nCirculating supply is lower. For live price: https://saucerswap.finance`;
+            break;
+          }
+        } catch(e) { continue; }
       }
     } catch(e) {}
 
