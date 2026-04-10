@@ -21,172 +21,172 @@ Airship captain: transport service, earn when others travel.
 Shop owner, tech specialist, explorer, collector.
 
 === ANIMALS AND SIDEKICKS ===
-Every player gets a sidekick animal for quests. Upgradeable using tech from the world or tech shops. Different animals unlock different map areas. Breeding programs coming as project grows.
-Sidekick Animals NFT: Token ID 0.0.5224580, Symbol EARTH-SIDEKICK, Supply 772, Reserved 60.
-Available animals: Bears (55), Dark Bears (70), Crabs (30), Foxes (160), Hares (260).
-Farm Animals NFT: Token ID 0.0.3224526, Symbol EARTH-FARM-ANIMAL.
-Farm animals: 3000 Chickens, 1500 Pigs, 450 Cows. Used in villages to establish economy.
+Every player gets a sidekick animal for quests. Upgradeable at tech shops and pet shops. Different animals unlock different map areas. Breeding programs coming.
+Sidekick Animals: Token ID 0.0.5224580, Symbol EARTH-SIDEKICK, Supply 772, Reserved 60.
+Types: Bears (55), Dark Bears (70), Crabs (30), Foxes (160), Hares (260).
+Farm Animals: Token ID 0.0.3224526, Symbol EARTH-FARM-ANIMAL.
+Types: 3000 Chickens, 1500 Pigs, 450 Cows. Used in villages to establish economy.
 
 === NFT LENDING AND RENTING ===
-Landowners lend NFTs to gamers for fee or % of earnings. Example: Metal Detector NFT earns owner 10% of gamer STEAM earnings. Prevents NFT oversaturation. Both sides benefit.
+Landowners lend NFTs to gamers for fee or % of earnings. Example: Metal Detector NFT earns owner 10% of gamer STEAM. Prevents NFT oversaturation. Both sides benefit.
 
 === BANKING REWARDS (STAKING) ===
-Banking is equivalent to staking. No need to move STEAM out of wallet. Minimum deposit: 1 STEAM.
+Banking is equivalent to staking. No need to move STEAM out of wallet. Minimum deposit: 1 STEAM. Capped at 100,000 STEAM.
 Start at: https://earthlings.land/?page=rewardsbanking
-How to start: get STEAM on SaucerSwap, connect wallet (HashPack or Chrome browser), enter email, click Send. First rewards within 24 hours then daily.
-Banking rewards capped at 100,000 STEAM in wallet.
-Current APR: approximately 6.6% base (July 2025 data)
-Total value banked: 68,453,972 STEAM ($622,931 USD)
-Banking rewards disbursed daily.
+How to start: get STEAM on SaucerSwap, connect wallet (HashPack or Chrome), enter email, click Send. First rewards within 24 hours then daily.
+Current APR: approximately 6.6% base (July 2025 data).
+Total banked: 68,453,972 STEAM ($622,931 USD).
 
-APR RATES by deposit (up to 100,000 STEAM):
-1 - 24,999 STEAM: 3% APR
-25,000 - 49,999 STEAM: 6% APR
-50,000 - 74,999 STEAM: 9% APR
-75,000 - 99,999 STEAM: 12% APR
-100,000+: 18% APR
+APR by deposit amount:
+1-24,999 STEAM: 3% APR
+25,000-49,999 STEAM: 6% APR
+50,000-74,999 STEAM: 9% APR
+75,000-99,999 STEAM: 12% APR
+100,000+ STEAM: 18% APR
 
-APR AMPLIFIERS (stackable, boost your rewards):
-Town Plot (1 per account): 3% APR bonus
-Founders Card FC (1 per account): 3% APR bonus
-Early Earthlings Card EEC (1 per account): 1.5% APR bonus
-STEAM Pin amplifiers (stackable - only pins are stackable):
-Gold Pin: 24% APR bonus
-Silver Pin: 18% APR bonus
-Copper Pin: 15% APR bonus
-Denim Pin: 15% APR bonus
-Classic Pin: 6% APR bonus
-Example: 10 classic STEAM Pins = up to 60% APR extra. Reward multiplier capped at 100k STEAM.
+APR AMPLIFIERS:
+Town Plot (1 per account): +3% APR
+Founders Card FC (1 per account): +3% APR
+Early Earthlings Card EEC (1 per account): +1.5% APR
+STEAM Pins (stackable only pins are stackable):
+Gold Pin: +24% APR
+Silver Pin: +18% APR
+Copper Pin: +15% APR
+Denim Pin: +15% APR
+Classic Pin: +6% APR
+Example: 10 Classic Pins = up to +60% APR extra.
 
 === DAILY STEAM CLAIM ===
-NFT holders can claim free STEAM daily. Claim every day at 12:00 PM UTC at earthlings.land.
-Total made available for daily claim: 7,574,940 STEAM (reserved in wallet 0.0.6020076, claim until depleted).
-Daily claim amounts per item per day:
-EARTH-TOWN-EU (0.0.1783008): 240 items, 10 STEAM/day, 72,000/month
-EARTH-VILLAGE-EU (0.0.1783112): 365 items, 10 STEAM/day, 109,500/month
-EARTH-EU-REMOTE (0.0.5021324): 150 items, 8 STEAM/day, 36,000/month
-EARTH-WL City (0.0.3170783): 1,000 items, 6 STEAM/day, 180,000/month
-EARTH-LAND-EU (0.0.3771379): 8,600 items, 2 STEAM/day, 516,000/month
-EARTH-AIR (0.0.1282534): 1,500 items, 1 STEAM/day, 45,000/month
-EARTH-SW (0.0.1127032): 2,350 items, 1 STEAM/day, 70,500/month
-EARTH-PIN (0.0.1236771): 2,798 items, 1 STEAM/day, 83,940/month
-EARTH-STAMP (0.0.1732956): 1,300 items, 1 STEAM/day, 39,000/month
-EARTH-BOSS (0.0.1368168): 620 items, 1 STEAM/day, 18,600/month
-EARTH-APPARATUS (0.0.2019409): 665 items, 1 STEAM/day, 19,950/month
+NFT holders claim free STEAM daily at 12:00 PM UTC at earthlings.land.
+Total pool: 7,574,940 STEAM (wallet 0.0.6020076, claim until depleted).
+Daily STEAM per item:
+EARTH-TOWN-EU (0.0.1783008): 10 STEAM/day
+EARTH-VILLAGE-EU (0.0.1783112): 10 STEAM/day
+EARTH-EU-REMOTE cabin (0.0.5021324): 8 STEAM/day
+EARTH-WL City (0.0.3170783): 6 STEAM/day
+EARTH-LAND-EU (0.0.3771379): 2 STEAM/day
+EARTH-AIR, EARTH-SW, EARTH-PIN, EARTH-STAMP, EARTH-BOSS, EARTH-APPARATUS: 1 STEAM/day each
 
 === STEAM TOKEN ===
 Token ID: 0.0.3210123
 Total supply: 1,000,000,000 STEAM
-Circulating supply (July 2025): 209,259,221 STEAM
-TGE price: $0.02 USD (May 3 2024)
-Community claimed total: 7,574,940 STEAM
-Wallets holding STEAM: 36,346
-Available on: MEXC (CEX), SaucerSwap (DEX), Bonzo Finance
+Circulating (July 2025): 209,259,221 STEAM
+TGE price: $0.02 (May 3 2024)
+Wallets holding: 36,346
+On: MEXC (CEX), SaucerSwap (DEX), Bonzo Finance
 
-STEAM allocation percentages:
-Rewards Pool: 33.6%
-Core Development: 29%
-Operations: 18%
-Team: 10%
-Treasury: 10%
-Liquidity Fund: 1.5%
-Marketing: 5%
-Airdrop/Bounty: 6.3%
-Advisors: 2%
-Strategic Partnerships: 3%
-Legal: 3%
-Private Sale: 6%
-Public Sale IDO: 2.8%
-IDO: 2.8%
-
-IDO raise allocation: Game Development 40%, Marketing 20%, Exchanges 10%, Project Management 10%.
-
-Ways to earn STEAM: hunting lost tech, selling animals, quests, owning shops, transport, trading NFTs, collecting rent, lending NFTs, owning gamers plots, banking rewards, daily claim (if eligible), playing STEAM RUNNER.
+Earn STEAM by: hunting lost tech, selling animals, quests, shops, transport, trading NFTs, rent, lending NFTs, gamers plots, banking rewards, daily claim, STEAM RUNNER.
 
 === WATER TOKEN ===
-Secondary gamers token. Fixed price: $0.01 USD pegged to USD. Unlimited supply. Play entire game with WATER only, no crypto wallet needed. Every WATER purchase funds STEAM buybacks.
+Secondary gamers token. Fixed price $0.01 USD. Unlimited supply. Full game playable with WATER only, no crypto wallet needed. Every WATER purchase funds STEAM buybacks.
 
 === FOUNDERS CARD (FC) ===
 Token ID: 0.0.5503955, Symbol: EARTH-STEAM-FC
-4 burnable NFTs released after IDO. Claim STEAM at earthlings.land.
-Sell all 4 day 1: max 25,000 STEAM total.
-Hold 20 months: up to 100,000 STEAM total.
-Each card: starts 6,250 STEAM, increases linearly to 25,000 STEAM over 20 months.
-After additional 2 months, remaining STEAM divided among all unburnt cards.
-Also acts as banking APR amplifier (+3% APR, 1 per account).
+4 burnable NFTs. Burn to claim STEAM at earthlings.land.
+Sell day 1: max 25,000 STEAM. Hold 20 months: up to 100,000 STEAM.
+Each card starts at 6,250 STEAM, rises linearly to 25,000 STEAM over 20 months.
+Banking amplifier: +3% APR (1 per account).
 
 === EARLY EARTHLINGS CARD (EEC) ===
-NOT the same as a Founders Card.
-Burnable for 5,000 STEAM OR keep in wallet for benefits.
-Benefits: airdrops, whitelist access to larger mints, banking multiplier (+1.5% APR).
-Mint price was $100 (April 3rd public open door INO on HeadStarter).
+NOT the same as Founders Card.
+Burnable for 5,000 STEAM OR keep for benefits: airdrops, whitelist access, banking +1.5% APR.
+Mint price was $100 (April 3 2024, public open door INO on HeadStarter).
 
-=== STEAM IDO AND PRIVATE SALE ===
-Facilitated by HeadStarter (app.headstarter.org), the Hedera ecosystem accelerator and launchpad.
-Private Sale with vesting: April 25, price $0.01 USD (in HBAR). Min allocation $1,000, max $10,000. Vesting: 5% at TGE, remainder over 12 months monthly on HeadStarter launchpad.
-IDO with vesting: April 30, price $0.016 USD. Max allocation $2,500 per KYC allowlisted wallet. Vesting: 50% at TGE, 25% at 6 months, 25% at 9 months.
-IDO without vesting: May 1, price $0.02 USD. 100% claimable on HeadStarter at token launch. Max $1,000 per KYC wallet.
-Token Generation Event (TGE): May 3 2024, 3 PM UTC.
-KYC required for IDO participation via HeadStarter.
+=== BAGHOLDER NFT STEAM DROP ===
+Massive airdrop Feb-May 2024 for ALL HBAR holders (cap 1M HBAR per wallet).
+4 surprise snapshots totaling 15,000,000 PhSTEAM/STEAM.
+Free mint. Royalties used for STEAM buybacks.
+Need only 1 BAGHOLDER NFT to qualify.
+Associate: EARTH-BAGHOLDER 0.0.4624252, PhSTEAM 0.0.3941507, STEAM 0.0.3210123.
 
 === GRELF AVATAR (STEAM RUNNER) ===
 Token ID: 0.0.7906587, Symbol: EARTH-STEAMRUNNER-ASSET
-Total supply: 2,000 GRELF avatars, 50 reserved for giveaways.
-Price: Free (distributed via Kabila launchpad).
-Round 1 qualifier: wallets holding minimum 100 STEAM and 5 GRELF tokens (0.0.1159074).
-Gerbert The Grelf: limited-edition character for STEAM RUNNER, playful and challenging.
+Total: 2,000 GRELF avatars, 50 reserved for giveaways. Price: Free (Kabila launchpad).
+Gerbert The Grelf: limited-edition humorous character for STEAM RUNNER.
 
 === CITY PLOTS - NEW PARIS ===
-Total supply: 1,000 city building plots in New Paris (25 km2).
-Districts: Sheng District, Thorne District (and others on map).
+Total supply: 1,000 city building plots (25 km2).
+Districts: Sheng District, Thorne District and others.
 Plot sizes: 8x8m, 8x16m, 16x16m, 16x32m, 8x32m.
-Whitelist price: $100. WL Token ID: 0.0.3170783, supply 1000.
-Public price: $200, minimum 33 available.
-All sold in STEAM. City plot also acts as banking APR amplifier.
-City plot also eligible for daily STEAM claim (6 STEAM/day).
+WL price: $100. WL Token ID: 0.0.3170783.
+Public price: $200. All sold in STEAM.
+Banking amplifier. Eligible for 6 STEAM/day daily claim.
 
-=== LAND PLOTS - EUROPE 2023 MINT ===
-Token ID: 0.0.3771379, Symbol: EARTH-LAND-EU, Total supply: 87,007 land plots.
-Platform: HeadStarter (app.headstarter.org).
-Land plots eligible for 2 STEAM/day daily claim.
-Land Deeds NFT: Token ID 0.0.3760597, Symbol EARTH-DEED. Distributed through partners, giveaways, competitions. Redeemable for a free land plot on first minting day.
-Swap Card: during round 4, issued instead of land plot NFTs. Can be exchanged for re-allocated land.
-Whitelist Cards: Token ID 0.0.3170783, Symbol EARTH-WL.
+=== TOWNS AND VILLAGES MINT (EUROPE 2023) ===
+Token IDs: Town 0.0.1783008, Village 0.0.1783112
+Total supply: 168 Land Towns, 72 Water Towns, 365 Villages. Reserved: 9 Towns and 3 Villages for team.
+Platform: Headstarter.org. Smart-contract with lazy minting, random NFT attribution via Hedera randomization.
+Founders Cards in circulation at mint time: 564.
+All towns and villages minted RANDOMLY - buyer does NOT know which town or village they get.
+Coordinates pre-programmed in NFT, visible on earthlings.land map after minting.
+Town Round 1 (Jan 31): Founders Cards holders, 231 amount, price 4200 HBAR, 24 hr.
+Town Round 2 (Feb 1): open to Founders Cards, Pins, Watches, Airships, Bossride holders. 1 per wallet, 4200 HBAR, 1 week.
+Village Round 1 (Jan 31): Founders Cards, 333 amount, 3435 HBAR, 24 hr.
+Village Round 2 (Feb 1): open to Founders Cards, Pins, Watches, Airships, Bossride holders. 1 per wallet, 3435 HBAR, 1 week.
+NOTE: Having a STAMP does NOT qualify for round 2 of towns and villages mint.
 
-=== EUROPEAN PLOT MAP ===
-Plot types: Remote Plots (cabins), Land Plot (towns/villages), City Building Plot (city street level), Village Plot, Town Plot.
-Key token IDs for land:
-EARTH-TOWN-EU: 0.0.1783008
-EARTH-VILLAGE-EU: 0.0.1783112
-EARTH-EU-REMOTE (Cabin): 0.0.5021324
-EARTH-LAND-EU: 0.0.3771379
-EARTH-AIR (Airship): 0.0.1282534
-EARTH-SW (Steam Watch?): 0.0.1127032
-EARTH-BOSS: 0.0.1368168
-EARTH-APPARATUS: 0.0.2019409
-EARTH-STAMP: 0.0.1732956
+=== LAND PLOTS EUROPE 2023 ===
+Token ID: 0.0.3771379, Symbol: EARTH-LAND-EU, Total: 87,007 land plots.
+Platform: HeadStarter. Eligible for 2 STEAM/day daily claim.
+Land Deeds: Token ID 0.0.3760597, Symbol EARTH-DEED. Redeemable for free land plot on first minting day.
 
-=== EARTH PINS NFT COLLECTION ===
-Token ID: 0.0.1236771, Symbol: EARTH-PIN. Traded on SentX.io.
-5 rarity versions: Classic, Denim, Copper (3), Silver (2), Gold (1 - ultra rare).
-STEAM Pins are stackable banking APR amplifiers. Eligible for 1 STEAM/day daily claim.
-Series 1 (35 designs): Invaders (190), Space (200), Golf (127), Flags (105), Steam (150), Sun (100), Gem (100), Pixelban (180), Birdy (180), River (65), Diver (51), Wen (51), Joy S. (55), Rocket (57), Speed (60), Racer (69), Rads (44), Altitude (45), Zep (50), Bright (50), Robo (30), Check (30), Iron Heart (35), Arcade (35), Metalhead (21), Badge (20), Bull (20), Bee (20), Cogs (33), Pegasus (10), King (9), Whale (6), Wolf (5), Key (5).
-Series 2 Hunt Pin: Classic 57, Denim 3, Copper 3, Silver 2, Gold 1.
-Series 3 Telescope Pin: Classic 175, Denim 4, Copper 5, Silver 3, Gold 1.
-Series 4 Underground Pin: Classic 1130.
+=== BACKPACKS (EARTH-BACKPACK) ===
+Token ID: 0.0.3094720, Symbol: EARTH-BACKPACK
+Base-Pack: total 40,000. Free airdrop July 15 2023. 21,361 dropped. Great for storing extra items while traveling.
+Limited edition packs (swappable from Base-Packs):
+Air-Pack: 80 total, 70 swap supply (28 base-packs each). Easy way back from air locations. Boosts handheld inventory.
+Ice-Pack: 165 total, 150 swap supply (16 base-packs each). Boosts life level in cold climates.
+Sea-Pack: 315 total, 300 swap supply (12 base-packs each). Boosts life on open waters.
+Desert-Pack: 540 total, 525 swap supply (9 base-packs each). Boosts life in desert.
+Jungle-Pack: 765 total, 750 swap supply (6 base-packs each). Boosts life in jungle and forests.
+Earth-Pack: 1315 total, 1300 swap supply (3 base-packs each). Boosts life in open field and forests.
+
+=== STEAM WATCH (EARTH-SW) ===
+Token ID: 0.0.1127032, Total: 2350
+Most advanced item. Ability to freeze environment making it easier to escape or pass obstacles. Must wait cooldown before reuse. Risk losing 75% life if tornado hits without watch.
+Types by freeze level:
+Turquoise (1645): freeze 1.00-1.25
+Brown (517): freeze 1.26-1.50
+Gold (141): freeze 1.51-1.75
+Black (47): freeze 1.76-2.00 (longest, rarest)
+
+=== EARTH APPARATUS (EARTH-APPARATUS) ===
+Token ID: 0.0.2019409. Max supply infinite (each item limited, new items share token ID).
+In-game tools to aid players completing tasks.
+The Mighty Broom: supply 188 (168 limited + 20 reserved). Airdropped to Land Town Holders. Weapon vs wild animals. Combine with Rake = triple-wield attack force.
+The Daring Rake: supply 385 (365 + 20 reserved). Airdropped to Village Holders. Defense tool. Combine with Broom = triple-wield.
+The Powerful Paddle: supply 92 (72 + 20 reserved). Airdropped to Water Town Holders. Water defense. Combine with Broom and Rake = triple-wield.
+Soccer Ball: total 3100, in circulation 750. Airdropped via Sphera World INO. One-shot defense. Earthlings x Sphera collaboration.
+
+=== PIN UTILITIES (EARTH-PIN) ===
+Token ID: 0.0.1236771. Each pin design has specific in-game utility. Rarer pin = stronger utility and faster recharge.
+
+River Pin: own a boat with advanced features. Rarer pin = more features: onboard navigation, underwater sonar, recovery crane, spyglass to zoom in on far items.
+
+Diver Pin: unlock in-game diver suit. Dive deeper, access magnetic gloves (attract buried items), built-in flashlights, pressure protection, retrieval capacity for treasure. Classic pins have limited reach but can go deep if tethered from water town or boat.
+
+King Pin: surpasses Bull pin. Provides resistance boost AND summons a knight to deliver powerful blow to opponent. Rarity determines attack strength. King may access places others cannot.
+
+Bee Pin: when confronted with opponents too big to handle, bees come to aid. No animal too big for bees. Bees produce honey to restore sidekick animal to full HP. Pin must recharge after use. Rarer pin = longer help, more friends, faster recharge.
+
+Golf Pin: escape sinkholes and dangers. Jump holes regularly appear in game - everyone can use them for fast forward. Gold pin owners get super fast forward and can summon jump holes on demand to jump over danger or large areas. Rarer pin = more jump holes appear, faster recharge.
+
+Hunt Pin: guides you when lost. Follow arrow to find way out. May hint direction to rare animal or loot.
+
+Steam Pin: registered for banking rewards. Gold 24% APR, Silver 18%, Copper 15%, Denim 15%, Classic 6%. Stack multiple pins. Reward multiplier capped at 100k STEAM in wallet.
 
 === STEAM RUNNER MOBILE GAME ===
-First NFT-connected play-and-earn mobile game on Hedera. Free. Google Play and Apple App Store. Uses Avatar NFTs. Top players earn bonus STEAM. HBAR Foundation supported. Website: steamrunner.io
+First NFT-connected play-and-earn mobile game on Hedera. Free. Google Play and Apple App Store. Uses Earthlings Avatar NFTs. Top players earn bonus STEAM. HBAR Foundation supported. Website: steamrunner.io
 
 === SMACK MOSQUITO ===
-Second mobile game. On Telegram. Partner project with SentX and HashPack. In development 2025.
+Second mobile game. Telegram. Partner project with SentX and HashPack. In development 2025.
 
 === ROADMAP ===
-Accomplished 2022-present: community built, player UI, avatar customisation, chat system, train and road system, battle system, inventory system, showcased floating islands and towns and cities, launched STEAM, Hedera partnerships, launched STEAM RUNNER, towns and villages allocation map done, banking rewards live, liquidity on Bonzo and SaucerSwap, staking for bank owners unlocked.
-2025 ongoing: dynamic weather system, Smack Mosquito (Telegram), gameplay scenes, city plots map, Pre-Alpha New Paris, treasure system, quests, battle system, AI players.
+Accomplished 2022-present: community, player UI, avatar customisation, chat, train and road system, battle system, inventory, floating islands and towns and cities, STEAM launched, Hedera partnerships, STEAM RUNNER launched, towns and villages allocation map, banking rewards live, liquidity Bonzo and SaucerSwap, bank owner staking unlocked.
+2025 ongoing: dynamic weather, Smack Mosquito Telegram game, gameplay scenes, city plots map, Pre-Alpha New Paris, treasure system, quests, battle system, AI players.
 
 === HEDERA BLOCKCHAIN ===
-Under 4 seconds consensus. Carbon neutral. Always low fees. 27,031 NFTs minted for $544. 2M tokens transferred for $2.70. PoS, BFT. Uses HTS not ERC-721.
+Under 4 seconds. Carbon neutral. Always low fees. 27,031 NFTs minted for $544. 2M tokens transferred for $2.70. PoS, BFT. Uses HTS not ERC-721.
 Wallets: HashPack (most popular), BladeWallet, Kabila, WallaWallet.
 
 === ALL TOKEN IDS ===
@@ -199,36 +199,36 @@ EARTH-LAND-EU: 0.0.3771379
 EARTH-TOWN-EU: 0.0.1783008
 EARTH-VILLAGE-EU: 0.0.1783112
 EARTH-EU-REMOTE (Cabin): 0.0.5021324
-EARTH-WL (City/Whitelist): 0.0.3170783
+EARTH-WL (City Whitelist): 0.0.3170783
 EARTH-PIN: 0.0.1236771
-EARTH-AIR: 0.0.1282534
-EARTH-SW: 0.0.1127032
+EARTH-AIR (Airship): 0.0.1282534
+EARTH-SW (Steam Watch): 0.0.1127032
 EARTH-STAMP: 0.0.1732956
 EARTH-BOSS: 0.0.1368168
 EARTH-APPARATUS: 0.0.2019409
 EARTH-SIDEKICK: 0.0.5224580
 EARTH-FARM-ANIMAL: 0.0.3224526
 EARTH-DEED: 0.0.3760597
+EARTH-BACKPACK: 0.0.3094720
 
 === MARKETPLACES AND EXCHANGES ===
 SentX.io: primary NFT marketplace
 SaucerSwap: DEX for STEAM
 Bonzo Finance: STEAM liquidity and lending
 MEXC: CEX listing
-HeadStarter (app.headstarter.org): launchpad for INO/IDO
+HeadStarter (app.headstarter.org): launchpad
 Kabila: avatar distributions
 
 === COMMUNITY AND TEAM ===
-Patrick de Grijs: concept and marketing, very active on Discord and Telegram daily. Ask him anything.
+Patrick de Grijs: concept and marketing, very active on Discord and Telegram daily.
 Marcel de Grijs: UX and graphic design, 20+ years.
 Jorgo Wildeboer: all tech.
-Discord: https://discord.com/invite/Earthlings-land (most detailed info here, 3000+ members)
+Discord: https://discord.com/invite/Earthlings-land (most detailed info, 3000+ members)
 X: https://x.com/earthlingsland
 Telegram: https://t.me/earthlings_land
 YouTube: https://www.youtube.com/@EarthlingsLand
 Website: https://earthlings.land
 Banking: https://earthlings.land/?page=rewardsbanking
-Daily claim: https://earthlings.land (claim page at 12:00 PM UTC daily)
 STEAM Runner: steamrunner.io
 
 === STATISTICS (July 2025) ===
@@ -236,16 +236,17 @@ Circulating supply: 209,259,221 STEAM
 Total banked: 68,453,972 STEAM ($622,931 USD)
 Community claimed: 7,574,940 STEAM
 Wallets holding STEAM: 36,346
-Banking APR base: ~6.6% (higher with amplifiers)
+Banking APR base: ~6.6%
 
 === ASSISTANT RULES ===
 Never give financial advice or price predictions. Always say DYOR.
 Main game in active development. STEAM RUNNER is live now.
-Most current info is in Discord. Always recommend checking official channels.
-Banking starts at earthlings.land/?page=rewardsbanking (minimum 1 STEAM, rewards daily).
+Most current info is in Discord. Always check official channels.
+Banking at earthlings.land/?page=rewardsbanking (min 1 STEAM, daily rewards).
 Daily STEAM claim at 12:00 PM UTC at earthlings.land.
-Token IDs are exact - always share precisely.
-IDO and private sale events are historical - they already happened in April/May 2024.
+Token IDs are exact - share precisely.
+IDO and private sale events happened in April/May 2024 - they are historical.
+Towns and Villages mint happened Jan-Feb 2023 - historical event.
 `;
 
 module.exports = { KNOWLEDGE };
