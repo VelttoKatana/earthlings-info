@@ -301,8 +301,11 @@ async function fetchLiveData() {
 }
 
 async function sendMsg(){if(isBusy)return;var el=document.getElementById('inp');var txt=el.value.trim();if(!txt)return;var wc=document.querySelector('.welcome');if(wc)wc.remove();el.value='';el.style.height='auto';var lp=langPrompts[currentLang]||'';const live = await fetchLiveData();
-  const livePrefix = live ? live + ' ' : '';
-  chatHistory.push({role:'user',content:livePrefix+txt+' ['+lp+']'});addMsg('user',txt);var tid=addTyping();isBusy=true;document.getElementById('sb').disabled=true;try{var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory})});var d=await r.json();removeTyping(tid);if(d.error){addMsg('ai','Something went wrong. Try again.');chatHistory.pop();}else{chatHistory.push({role:'assistant',content:d.reply});addMsg('ai',formatReply(d.reply));}}catch(e){removeTyping(tid);addMsg('ai','Connection lost. Try again.');chatHistory.pop();}isBusy=false;document.getElementById('sb').disabled=false;el.focus();}
+  if (live && chatHistory.length === 0) {
+    chatHistory.push({role:'user',content:'[system context]'});
+    chatHistory.push({role:'assistant',content:'I have the following live blockchain data: ' + live});
+  }
+  chatHistory.push({role:'user',content:txt+' ['+lp+']'});addMsg('user',txt);var tid=addTyping();isBusy=true;document.getElementById('sb').disabled=true;try{var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory})});var d=await r.json();removeTyping(tid);if(d.error){addMsg('ai','Something went wrong. Try again.');chatHistory.pop();}else{chatHistory.push({role:'assistant',content:d.reply});addMsg('ai',formatReply(d.reply));}}catch(e){removeTyping(tid);addMsg('ai','Connection lost. Try again.');chatHistory.pop();}isBusy=false;document.getElementById('sb').disabled=false;el.focus();}
 buildLangBar();showWelcome();
 </script>
 </body>
