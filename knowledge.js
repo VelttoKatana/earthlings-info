@@ -43,8 +43,8 @@ Per item per day: EARTH-TOWN-EU 10, EARTH-VILLAGE-EU 10, EARTH-EU-REMOTE 8, EART
 EARTH-AIR, EARTH-SW, EARTH-PIN, EARTH-STAMP, EARTH-BOSS, EARTH-APPARATUS: 1 STEAM/day each. Note: EARTH-BACKPACK does NOT qualify for daily STEAM claim.
 
 === STEAM TOKEN ===
-Token ID: 0.0.3210123. Max supply cap: 1,000,000,000 STEAM. TGE May 3 2024 at $0.02. Circulating supply (unlocked tokens): approximately 209,259,221 STEAM as of July 2025. By April 2026 approximately 179-240M STEAM in circulation.
-Circulating (July 2025): 209,259,221. Wallets: 36,346.
+Token ID: 0.0.3210123. Total max supply: 1,000,000,000 STEAM. TGE May 3 2024 at $0.02.
+Circulating supply as of July 2025: 209,259,221 STEAM. Wallets holding STEAM: 36,346.
 On: MEXC, SaucerSwap, Bonzo Finance. Also on Cryptotwits as STEAM.X.
 
 STEAM TOKEN DISTRIBUTION (total 1B):
