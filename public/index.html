@@ -296,7 +296,7 @@ async function fetchLiveData() {
     if (!r.ok) return "";
     const t = await r.json();
     const supply = Number(BigInt(t.total_supply) / 100n).toLocaleString("en-US");
-    return `[LIVE DATA from Hedera blockchain: STEAM total minted supply = ${supply} STEAM]`;
+    console.log("LIVE DATA fetched:", supply); return `[LIVE DATA from Hedera blockchain: STEAM total minted supply = ${supply} STEAM]`;
   } catch(e) { return ""; }
 }
 
