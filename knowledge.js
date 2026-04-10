@@ -151,7 +151,7 @@ NOTE: STAMP does NOT qualify for round 2 of Towns and Villages mint.
 1 STEAM/day daily claim.
 
 === EARTH PINS (EARTH-PIN) ===
-EARTH-PIN: 0.0.1236771. 5 rarity versions: Classic, Denim, Copper (3), Silver (2), Gold (1).
+EARTH-PIN: 0.0.1236771. 5 rarity versions: Classic (most common), Denim, Copper (3 per design), Silver (2 per design), Gold (1 per design - only 1 Gold exists for each pin design, ultra rare).
 STEAM Pins are stackable banking APR amplifiers. 1 STEAM/day daily claim.
 
 PIN UTILITIES (rarer pin = stronger effect and faster recharge):
