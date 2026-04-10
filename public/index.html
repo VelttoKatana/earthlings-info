@@ -77,10 +77,16 @@ var chatHistory = [];
 var currentLang = 'en';
 var isBusy = false;
 
-var langPrompts = {en:'Reply in English.',fi:'Vastaa suomeksi.',de:'Auf Deutsch.',es:'En espanol.',fr:'En francais.',nl:'In het Nederlands.',ja:'Japanese.',pt:'Em portugues.'};
+var langPrompts = {en:'Reply in English.',fi:'Vastaa suomeksi.',de:'Auf Deutsch.',es:'En espanol.',fr:'En francais.',nl:'In het Nederlands.',ja:'Reply in Japanese.',pt:'Em portugues.'};
 var suggestions = {
   en:['What is Earthlings.land?','How do I get started?','What is STEAM token?','What NFTs exist?','Is it free to play?','What is Hedera?'],
-  fi:['Mika on Earthlings.land?','Miten mukaan?','Mika on STEAM?','Mita NFTeja on?','Onko ilmainen?','Mika on Hedera?']
+  fi:['Mika on Earthlings.land?','Miten mukaan?','Mika on STEAM?','Mita NFTeja on?','Onko ilmainen?','Mika on Hedera?'],
+  de:['Was ist Earthlings.land?','Wie fange ich an?','Was ist STEAM?','Welche NFTs gibt es?','Ist es kostenlos?','Was ist Hedera?'],
+  es:['Que es Earthlings.land?','Como empiezo?','Que es STEAM?','Que NFTs existen?','Es gratis?','Que es Hedera?'],
+  fr:['Quest-ce que Earthlings.land?','Comment commencer?','Quest-ce que STEAM?','Quels NFTs existent?','Est-ce gratuit?','Quest-ce que Hedera?'],
+  nl:['Wat is Earthlings.land?','Hoe begin ik?','Wat is STEAM?','Welke NFTs zijn er?','Is het gratis?','Wat is Hedera?'],
+  ja:['Earthlings.landとは？','参加するには？','STEAMトークンとは？','どんなNFTがある？','無料でプレイできる？','Hederaとは？'],
+  pt:['O que e Earthlings.land?','Como comecar?','O que e STEAM?','Quais NFTs existem?','E gratuito?','O que e Hedera?']
 };
 var welcomeText = {
   en:{t:'Welcome, Earthling',s:'The Oracle awaits your questions.'},
