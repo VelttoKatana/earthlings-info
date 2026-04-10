@@ -39,7 +39,7 @@ STEAM Pins (stackable): Gold +24% (only 1 Gold Steam Pin exists, ultra rare), Si
 === DAILY STEAM CLAIM ===
 Claim free STEAM daily at 12:00 PM UTC at earthlings.land. Total pool: 7,574,940 STEAM.
 Per item per day: EARTH-TOWN-EU 10, EARTH-VILLAGE-EU 10, EARTH-EU-REMOTE 8, EARTH-WL City 6, EARTH-LAND-EU 2.
-EARTH-AIR, EARTH-SW, EARTH-PIN, EARTH-STAMP, EARTH-BOSS, EARTH-APPARATUS: 1 STEAM/day each.
+EARTH-AIR, EARTH-SW, EARTH-PIN, EARTH-STAMP, EARTH-BOSS, EARTH-APPARATUS: 1 STEAM/day each. Note: EARTH-BACKPACK does NOT qualify for daily STEAM claim.
 
 === STEAM TOKEN ===
 Token ID: 0.0.3210123. Total: 1,000,000,000. TGE May 3 2024 at $0.02.
@@ -53,7 +53,7 @@ Fixed price $0.01 USD. Unlimited supply. Full game playable without crypto walle
 EARTH-FC: 0.0.1097737 (original), EARTH-FC new: 0.0.9087983. EARTH-STEAM-FC: 0.0.5503955. Supply 2,280.
 Burn at earthlings.land for STEAM: sell day 1 max 25,000 STEAM, hold 20 months up to 100,000 STEAM.
 Banking amplifier +3%. Unlocks Earthling Plaza on Kabila.
-Original mint: Aug 8 2022, 2500 HBAR, 620 supply. Sold out in 13 minutes.
+Original mint: Aug 8 2022, price 2500 HBAR per card, 620 cards minted. Sold out in 13 minutes. Current EARTH-STEAM-FC supply is 2,280 (includes later distributions).
 
 === EARLY EARTHLINGS CARD (EEC) ===
 EARTH-EEC: 0.0.5264602. Supply 1,000. Burn for 5,000 STEAM OR keep for benefits: airdrops, WL access, banking +1.5%.
@@ -122,7 +122,7 @@ HBAR Air: 60-70 / 200-250 / 80-90 / 10,000-11,000
 Red Steam: 70-80 / 300-350 / 70-80 / 12,000-13,000
 Cloak Steam: 70-80 / 250-300 / 80-90 / 13,000-14,000
 Air Shark: 80-90 / 250-300 / 80-90 / 14,000-15,000
-BEE Happy: 60-70 / 400-450 / 50-60 / 30,000-31,000 (ONLY ship to cross ocean to another continent)
+BEE Happy: 60-70 / 400-450 / 50-60 / 30,000-31,000 (ONLY ship that can cross ocean to another continent, 30 total supply - very rare)
 Black Widow: 75-85 / 260-310 / 90-100 / 14,000-15,000 (best all-rounder with Blitz)
 Blitz Air: 75-85 / 220-270 / 70-80 / 10,000-11,000 (go through thunderstorms unharmed)
 Check Mate: 75-85 / 250-300 / 80-90 / 16,000-17,000
