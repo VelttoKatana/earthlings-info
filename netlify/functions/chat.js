@@ -53,7 +53,7 @@ Fixed price $0.01 USD. Unlimited supply. Full game playable without crypto walle
 EARTH-FC: 0.0.1097737 (original), EARTH-FC new: 0.0.9087983. EARTH-STEAM-FC: 0.0.5503955. Supply 2,280.
 Burn at earthlings.land for STEAM: sell day 1 max 25,000 STEAM, hold 20 months up to 100,000 STEAM.
 Banking amplifier +3%. Unlocks Earthling Plaza on Kabila.
-Original mint: Aug 8 2022, price 2500 HBAR per card, 620 cards minted. Sold out in 13 minutes. Current EARTH-STEAM-FC supply is 2,280 (includes later distributions).
+Original mint: Aug 8 2022, price 2500 HBAR per card, 620 cards minted. Sold out in 13 minutes. Current EARTH-STEAM-FC supply is 2,280. These were distributed as a 4-part drop to the 620 original Founders Card holders (4 cards each = 2,480 max, minus reserved/team = 2,280 in circulation).
 
 === EARLY EARTHLINGS CARD (EEC) ===
 EARTH-EEC: 0.0.5264602. Supply 1,000. Burn for 5,000 STEAM OR keep for benefits: airdrops, WL access, banking +1.5%.
@@ -142,6 +142,9 @@ Mighty Broom (188): airdropped to Land Town Holders. Weapon vs wild animals. Com
 Daring Rake (385): airdropped to Village Holders. Defense. Combine with Broom = triple-wield.
 Powerful Paddle (92): airdropped to Water Town Holders. Water defense. Combine with Broom+Rake = triple-wield.
 Soccer Ball (3100, 750 in circulation): Earthlings x Sphera collaboration. One-shot defense.
+Egg Shooter: Apparatus item available on SentX STEAM marketplace. Ranged weapon.
+Night Vision Goggles: needed for Underground areas exploration.
+Flashlight: solar-powered torch, needed for Underground areas.
 1 STEAM/day daily claim.
 
 === EARTH STAMPS ===
@@ -223,8 +226,8 @@ EARTH-INO-GOLD: 0.0.5035122
 EARTH-INO-SILVER: 0.0.5035129
 EARTH-INO-COPPER: 0.0.5035136
 EARTH-COLLECTIBLE-INO: 0.0.5035116
-EARTH-AVATAR-OG: 0.0.5011772
-EARTH-MONOWHEEL: 0.0.5020125
+EARTH-AVATAR-OG: 0.0.5011772 (original avatars: Mr. Banks, Pepper, Fynn, Sky, Kaya, 375 supply, bonus item for INO buyers)
+EARTH-MONOWHEEL: 0.0.5020125 (one-wheeled vehicle NFT, 300 supply, works on all terrains, bonus item for INO buyers)
 EARTH-EU-REMOTE (Cabin): 0.0.5021324
 EARTH-EEC: 0.0.5264602
 EARTH-ANIMAL-ACCESSORIES: 0.0.4716356
@@ -259,12 +262,13 @@ Server Owners: MundiViator (@mundiviator), SeiralliSuus (@SeiralliSuus)
 Administrators: Patron (@Patron = Patrick de Grijs), Desegnisto (@Desegnisto = Marcel de Grijs), Milan W (@Milan W), QuintenH (@QH)
 Guardians: Hbarjoe, Spud, Inventor7065, velttokatana
 
-=== STATISTICS (July 2025) ===
-Circulating supply: 209,259,221 STEAM
-Total banked: 68,453,972 STEAM ($622,931 USD)
-Community claimed: 7,574,940 STEAM
-Wallets holding STEAM: 36,346
-Banking APR base: ~6.6%
+=== STATISTICS (July 2025 - approximate, check earthlings.land for current data) ===
+Circulating supply: ~179-240M STEAM (growing, exact figure changes daily)
+Total banked (July 2025): 68,453,972 STEAM ($622,931 USD)
+Community claimed (July 2025): 7,574,940 STEAM
+Wallets holding STEAM (July 2025): 36,346
+Banking APR base: ~6.6% (varies with deposit amount and amplifiers)
+STEAM ATH: $0.0794 (Oct 29 2024)
 
 === ASSISTANT RULES ===
 Never give financial advice or price predictions. Always say DYOR. Always name things explicitly - never use just numbers or percentages without the name. For example: 'Town Plot +3%, Founders Card +3%, EEC +1.5%' not just '(+3%), (+3%), (+1.5%)'. Always start responses with a complete sentence, never mid-sentence.
