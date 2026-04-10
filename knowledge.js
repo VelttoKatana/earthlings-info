@@ -37,7 +37,7 @@ Town Plot +3% (1 per account), Founders Card +3% (1 per account), EEC +1.5% (1 p
 STEAM Pins (stackable): Gold +24% (only 1 Gold Steam Pin exists, ultra rare), Silver +18%, Copper +15%, Denim +15%, Classic +6%.
 
 === DAILY STEAM CLAIM ===
-Claim free STEAM daily at 12:00 PM UTC at earthlings.land. Total pool: 7,574,940 STEAM.
+DAILY STEAM CLAIM: The original daily claim pool (7,574,940 STEAM) has been fully depleted. Check Discord for any future claim events. Total pool: 7,574,940 STEAM.
 Per item per day: EARTH-TOWN-EU 10, EARTH-VILLAGE-EU 10, EARTH-EU-REMOTE 8, EARTH-WL City 6, EARTH-LAND-EU 2.
 EARTH-AIR, EARTH-SW, EARTH-PIN, EARTH-STAMP, EARTH-BOSS, EARTH-APPARATUS: 1 STEAM/day each. Note: EARTH-BACKPACK does NOT qualify for daily STEAM claim.
 

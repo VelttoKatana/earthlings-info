@@ -37,7 +37,7 @@ Town Plot +3% (1 per account), Founders Card +3% (1 per account), EEC +1.5% (1 p
 STEAM Pins (stackable): Gold +24% (only 1 Gold Steam Pin exists, ultra rare), Silver +18%, Copper +15%, Denim +15%, Classic +6%.
 
 === DAILY STEAM CLAIM ===
-Claim free STEAM daily at 12:00 PM UTC at earthlings.land. Total pool: 7,574,940 STEAM.
+DAILY STEAM CLAIM: The original daily claim pool (7,574,940 STEAM) has been fully depleted. Check Discord for any future claim events. Total pool: 7,574,940 STEAM.
 Per item per day: EARTH-TOWN-EU 10, EARTH-VILLAGE-EU 10, EARTH-EU-REMOTE 8, EARTH-WL City 6, EARTH-LAND-EU 2.
 EARTH-AIR, EARTH-SW, EARTH-PIN, EARTH-STAMP, EARTH-BOSS, EARTH-APPARATUS: 1 STEAM/day each. Note: EARTH-BACKPACK does NOT qualify for daily STEAM claim.
 
@@ -301,51 +301,19 @@ exports.handler = async function(event) {
     let liveData = "";
     try {
       const MIRROR = "https://mainnet-public.mirrornode.hedera.com/api/v1";
-
-      const [tokenRes, poolRes, holdersRes] = await Promise.allSettled([
-        fetch(`${MIRROR}/tokens/0.0.3210123`),
-        fetch(`${MIRROR}/balances?account.id=0.0.6020076&limit=1`),
-        fetch(`${MIRROR}/tokens/0.0.3210123/balances?order=desc&limit=1`)
-      ]);
-
-      const parts = [];
-
-      if (tokenRes.status === "fulfilled" && tokenRes.value.ok) {
-        const t = await tokenRes.value.json();
-        const decimals = parseInt(t.decimals) || 2;
-        const supply = parseInt(t.total_supply) / Math.pow(10, decimals);
-        parts.push(`STEAM total supply on chain: ${supply.toLocaleString()} STEAM`);
+      const tokenRes = await fetch(`${MIRROR}/tokens/0.0.3210123`);
+      if (tokenRes.ok) {
+        const t = await tokenRes.json();
+        const supply = parseInt(t.total_supply) / 100;
+        liveData = `\n\n=== LIVE ON-CHAIN DATA (Hedera Mirror Node) ===\nSTEAM total supply on chain right now: ${supply.toLocaleString()} STEAM\nFor current price: https://saucerswap.finance or https://mexc.com`;
       }
-
-      if (poolRes.status === "fulfilled" && poolRes.value.ok) {
-        const p = await poolRes.value.json();
-        if (p.balances && p.balances.length > 0) {
-          const bal = parseInt(p.balances[0].balance) / 100;
-          parts.push(`Daily claim pool (wallet 0.0.6020076) current balance: ${bal.toLocaleString()} STEAM remaining`);
-        }
-      }
-
-      if (holdersRes.status === "fulfilled" && holdersRes.value.ok) {
-        const h = await holdersRes.value.json();
-        if (h.links && h.links.next === null && h.balances) {
-          // can't get total count this way
-        }
-      }
-
-      if (parts.length > 0) {
-        liveData = "\n\n=== LIVE ON-CHAIN DATA (fetched right now from Hedera Mirror Node) ===\n" + parts.join("\n") + "\nFor STEAM price check: https://saucerswap.finance or https://mexc.com";
-      }
-    } catch(e) {
-      liveData = "";
-    }
+    } catch(e) {}
 
     const { messages } = JSON.parse(event.body);
-    const systemPrompt = KNOWLEDGE + liveData;
-
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-api-key": process.env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: "claude-haiku-4-5-20251001", max_tokens: 600, system: systemPrompt, messages })
+      body: JSON.stringify({ model: "claude-haiku-4-5-20251001", max_tokens: 600, system: KNOWLEDGE + liveData, messages })
     });
     const data = await response.json();
     return { statusCode: 200, headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json" }, body: JSON.stringify({ reply: data.content[0].text }) };
