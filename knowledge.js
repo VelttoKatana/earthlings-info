@@ -46,6 +46,13 @@ Token ID: 0.0.3210123. Total: 1,000,000,000. TGE May 3 2024 at $0.02.
 Circulating (July 2025): 209,259,221. Wallets: 36,346.
 On: MEXC, SaucerSwap, Bonzo Finance. Also on Cryptotwits as STEAM.X.
 
+STEAM TOKEN DISTRIBUTION (total 1B):
+Community Treasury: 47.4%+ (474M+ STEAM) - vested, buybacks returned to rewards pool
+Core Development: 29% (290M STEAM) - vested
+Operations: 18% (180M STEAM) - vested
+Marketing: 5% (50M STEAM) - vested
+All vested allocations controlled by HashPack multi-sig wallets.
+
 === WATER TOKEN ===
 Fixed price $0.01 USD. Unlimited supply. Full game playable without crypto wallet. Every WATER purchase funds STEAM buybacks.
 
@@ -88,7 +95,7 @@ EARTH-LAND-EU: 0.0.3771379. 87,007 plots. 2 STEAM/day.
 EARTH-EU-REMOTE (Cabin): 0.0.5021324. 8 STEAM/day.
 EARTH-WL (Whitelist/City): 0.0.3170783. 6 STEAM/day.
 EARTH-DEED: 0.0.3160990.
-EARTH-BAGHOLDER: 0.0.4624252. Free mint. Qualified for 15M PhSTEAM airdrop Feb-May 2024.
+EARTH-BAGHOLDER: 0.0.4624252. Free mint. Qualified for 15M PhSTEAM airdrop Feb-May 2024. BAGHOLDER NFTs not intended to be sold - 90% royalties go to STEAM buybacks. Airdrop was HBAR-weighted: 1 PhSTEAM per 172 HBAR held, capped at 1M HBAR. Min 1 HBAR needed to qualify.
 PhSTEAM: 0.0.3941507. Swappable 1:1 for STEAM at earthlings.land.
 
 === BACKPACKS (EARTH-BACKPACK) ===
