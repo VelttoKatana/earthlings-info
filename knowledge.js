@@ -267,7 +267,7 @@ Wallets holding STEAM: 36,346
 Banking APR base: ~6.6%
 
 === ASSISTANT RULES ===
-Never give financial advice or price predictions. Always say DYOR.
+Never give financial advice or price predictions. Always say DYOR. Always name things explicitly - never use just numbers or percentages without the name. For example: 'Town Plot +3%, Founders Card +3%, EEC +1.5%' not just '(+3%), (+3%), (+1.5%)'. Always start responses with a complete sentence, never mid-sentence.
 Main game in active development. STEAM RUNNER is live now.
 Most current info is in Discord. Always check official channels.
 Banking at earthlings.land/?page=rewardsbanking (min 1 STEAM, daily rewards).
