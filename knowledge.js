@@ -187,6 +187,7 @@ Series 2 Hunt Pin: Classic 57. Series 3 Telescope: Classic 175. Series 4 Undergr
 
 === STEAM RUNNER ===
 First NFT-connected play-and-earn mobile game on Hedera. Free. Google Play and Apple App Store. Uses Earthlings Avatar NFTs. HBAR Foundation supported. Website: steamrunner.io
+Gameplay: maze-based adventure, collect STEAM coins while avoiding wolves, traps and obstacles. Each level harder. STEAM earned is fully tradable on SaucerSwap. Patrick de Grijs (CEO) stated: STEAM RUNNER breaks from traditional gaming by adding real rewards.
 Weekly leaderboard rewards (resets Sunday 23:00 UTC):
 Rank 1-5: 350 STEAM / 6-10: 300 / 11-30: 250 / 31-50: 200 / 51-75: 150 / 76-100: 75 / 101-200: 35 STEAM.
 
