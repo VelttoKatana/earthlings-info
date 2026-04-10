@@ -304,8 +304,11 @@ exports.handler = async function(event) {
       const tokenRes = await fetch(`${MIRROR}/tokens/0.0.3210123`);
       if (tokenRes.ok) {
         const t = await tokenRes.json();
-        const supply = parseInt(t.total_supply) / 100;
-        liveData = `\n\n=== LIVE ON-CHAIN DATA (Hedera Mirror Node) ===\nSTEAM total supply on chain right now: ${supply.toLocaleString()} STEAM\nFor current price: https://saucerswap.finance or https://mexc.com`;
+        // Use BigInt to handle large numbers correctly
+        const rawSupply = BigInt(t.total_supply);
+        const supply = Number(rawSupply / 100n);
+        const supplyFormatted = supply.toLocaleString("en-US");
+        liveData = `\n\n=== LIVE ON-CHAIN DATA (Hedera Mirror Node, fetched right now) ===\nSTEAM total minted supply: ${supplyFormatted} STEAM\nNote: circulating supply is lower as not all tokens are released yet.\nFor current STEAM price: https://saucerswap.finance or https://mexc.com`;
       }
     } catch(e) {}
 
