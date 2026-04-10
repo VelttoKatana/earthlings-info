@@ -296,12 +296,71 @@ exports.handler = async function(event) {
     return { statusCode: 200, headers: { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Content-Type", "Access-Control-Allow-Methods": "POST, OPTIONS" }, body: "" };
   }
   if (event.httpMethod !== "POST") return { statusCode: 405, body: "Method Not Allowed" };
+
   try {
+    // Fetch live Hedera data
+    let liveData = "";
+    try {
+      const MIRROR = "https://mainnet-public.mirrornode.hedera.com/api/v1";
+
+      const [tokenRes, poolRes, saucerRes] = await Promise.allSettled([
+        fetch(`${MIRROR}/tokens/0.0.3210123`),
+        fetch(`${MIRROR}/balances?account.id=0.0.6020076`),
+        fetch("https://api.saucerswap.finance/tokens/0.0.3210123")
+      ]);
+
+      let holders = null, supply = null, claimPool = null, price = null, volume = null;
+
+      if (tokenRes.status === "fulfilled" && tokenRes.value.ok) {
+        const t = await tokenRes.value.json();
+        holders = parseInt(t.decimals !== undefined ? t.total_supply : null);
+        supply = t.total_supply;
+        holders = t.custom_fees ? null : null;
+        // Get holder count from token info
+        const tokenData = t;
+        supply = tokenData.total_supply;
+      }
+
+      // Get holder count separately
+      try {
+        const hRes = await fetch(`${MIRROR}/tokens/0.0.3210123/balances?limit=1`);
+        const hData = await hRes.json();
+        // total count not directly available, use links
+      } catch(e) {}
+
+      if (poolRes.status === "fulfilled" && poolRes.value.ok) {
+        const p = await poolRes.value.json();
+        if (p.balances && p.balances[0]) {
+          claimPool = (p.balances[0].balance / 100).toFixed(0);
+        }
+      }
+
+      if (saucerRes.status === "fulfilled" && saucerRes.value.ok) {
+        const s = await saucerRes.value.json();
+        price = s.priceUsd || s.price || null;
+        volume = s.volume24h || null;
+      }
+
+      const parts = [];
+      if (supply) parts.push(`STEAM total supply on chain: ${(parseInt(supply)/100).toLocaleString()} STEAM`);
+      if (claimPool) parts.push(`Daily claim pool remaining: ${parseInt(claimPool).toLocaleString()} STEAM`);
+      if (price) parts.push(`Current STEAM price: $${parseFloat(price).toFixed(6)}`);
+      if (volume) parts.push(`24h trading volume: $${parseFloat(volume).toFixed(2)}`);
+
+      if (parts.length > 0) {
+        liveData = "\n\n=== LIVE HEDERA DATA (fetched right now) ===\n" + parts.join("\n") + "\nData source: Hedera Mirror Node + SaucerSwap API";
+      }
+    } catch(e) {
+      liveData = "";
+    }
+
     const { messages } = JSON.parse(event.body);
+    const systemPrompt = KNOWLEDGE + liveData;
+
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-api-key": process.env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: "claude-haiku-4-5-20251001", max_tokens: 600, system: KNOWLEDGE, messages })
+      body: JSON.stringify({ model: "claude-haiku-4-5-20251001", max_tokens: 600, system: systemPrompt, messages })
     });
     const data = await response.json();
     return { statusCode: 200, headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json" }, body: JSON.stringify({ reply: data.content[0].text }) };
