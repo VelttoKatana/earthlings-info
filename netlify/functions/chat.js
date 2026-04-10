@@ -42,7 +42,7 @@ Per item per day: EARTH-TOWN-EU 10, EARTH-VILLAGE-EU 10, EARTH-EU-REMOTE 8, EART
 EARTH-AIR, EARTH-SW, EARTH-PIN, EARTH-STAMP, EARTH-BOSS, EARTH-APPARATUS: 1 STEAM/day each. Note: EARTH-BACKPACK does NOT qualify for daily STEAM claim.
 
 === STEAM TOKEN ===
-Token ID: 0.0.3210123. Total: 1,000,000,000. TGE May 3 2024 at $0.02.
+Token ID: 0.0.3210123. Max supply cap: 1,000,000,000 STEAM (all minted on chain). TGE May 3 2024 at $0.02. Circulating supply (unlocked/tradeable) is lower due to vesting - approximately 179-240M STEAM as of 2026.
 Circulating (July 2025): 209,259,221. Wallets: 36,346.
 On: MEXC, SaucerSwap, Bonzo Finance. Also on Cryptotwits as STEAM.X.
 
@@ -300,29 +300,12 @@ exports.handler = async function(event) {
   try {
     let liveData = "";
     try {
-      // Try multiple mirror nodes
-      const mirrors = [
-        "https://mainnet-public.mirrornode.hedera.com/api/v1",
-        "https://mirrornode.hedera.com/api/v1",
-        "https://hedera-mainnet.public.blastapi.io/api/v1"
-      ];
-      
-      for (const mirror of mirrors) {
-        try {
-          const controller = new AbortController();
-          const timeout = setTimeout(() => controller.abort(), 3000);
-          const tokenRes = await fetch(`${mirror}/tokens/0.0.3210123`, { signal: controller.signal });
-          clearTimeout(timeout);
-          
-          if (tokenRes.ok) {
-            const t = await tokenRes.json();
-            const rawSupply = BigInt(t.total_supply);
-            const supply = Number(rawSupply / 100n);
-            const supplyFormatted = supply.toLocaleString("en-US");
-            liveData = `\n\n=== LIVE BLOCKCHAIN DATA ===\nSTEAM total minted supply right now: ${supplyFormatted} STEAM\nMax supply cap: 1,000,000,000 STEAM\nCirculating supply is lower. For live price: https://saucerswap.finance`;
-            break;
-          }
-        } catch(e) { continue; }
+      const MIRROR = "https://mainnet-public.mirrornode.hedera.com/api/v1";
+      const tokenRes = await fetch(`${MIRROR}/tokens/0.0.3210123`);
+      if (tokenRes.ok) {
+        const t = await tokenRes.json();
+        const supply = parseInt(t.total_supply) / 100;
+        liveData = `\n\n=== LIVE ON-CHAIN DATA (Hedera Mirror Node) ===\nSTEAM total supply on chain right now: ${supply.toLocaleString()} STEAM\nFor current price: https://saucerswap.finance or https://mexc.com`;
       }
     } catch(e) {}
 
