@@ -270,11 +270,11 @@ Server Owners: MundiViator (@mundiviator), SeiralliSuus (@SeiralliSuus)
 Administrators: Patron (@Patron = Patrick de Grijs), Desegnisto (@Desegnisto = Marcel de Grijs), Milan W (@Milan W), QuintenH (@QH)
 Guardians: Hbarjoe, Spud, Inventor7065, velttokatana
 
-=== STATISTICS (July 2025 - approximate, check earthlings.land for current data) ===
-Circulating supply: ~179-240M STEAM (growing, exact figure changes daily)
+=== STATISTICS (July 2025 snapshot - these are approximate historical figures) ===
+Circulating supply (July 2025): ~209M STEAM. As of April 2026 approximately 179-240M range per exchanges. Grows daily.
 Total banked (July 2025): 68,453,972 STEAM ($622,931 USD)
 Community claimed (July 2025): 7,574,940 STEAM
-Wallets holding STEAM (July 2025): 36,346
+Wallets holding STEAM (July 2025): 36,346 wallets. Note: this grows over time, check hashscan for current.
 Banking APR base: ~6.6% (varies with deposit amount and amplifiers)
 STEAM ATH: $0.0794 (Oct 29 2024)
 
