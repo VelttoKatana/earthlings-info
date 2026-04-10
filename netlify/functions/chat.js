@@ -19,7 +19,7 @@ Free-roaming player: no land needed, earn STEAM and WATER, join teams, can be hi
 Banker, airship captain, shop owner, tech specialist, explorer, collector.
 
 === ANIMALS AND SIDEKICKS ===
-Sidekick Animals: Token 0.0.5224580 (EARTH-SIDEKICK). Supply 772. Types: Bears (55), Dark Bears (70), Crabs (30), Foxes (160), Hares (260).
+Sidekick Animals: Token 0.0.3224535 (EARTH-SIDEKICK). Supply 772. Types include: European Mouflon, Red Deer, Fast Hare and others. 258 owners, 52 listed on market.
 Farm Animals: Token 0.0.3224536 (EARTH-FARM-ANIMAL). 3000 Chickens, 1500 Pigs, 450 Cows.
 Animal Accessories: Token 0.0.4716356 (EARTH-ANIMAL-ACCESSORIES).
 
@@ -215,7 +215,7 @@ EARTH-APPARATUS: 0.0.2019409
 EARTH-BACKPACK: 0.0.3094720
 EARTH-DEED: 0.0.3160990
 EARTH-LAND-EU: 0.0.3771379
-EARTH-SIDEKICK: 0.0.5224535
+EARTH-SIDEKICK: 0.0.3224535
 EARTH-FARM-ANIMAL: 0.0.3224536
 EARTH-WL (Whitelist): 0.0.3170783
 EARTH-BAGHOLDER: 0.0.4624252
