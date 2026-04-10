@@ -1,0 +1,125 @@
+﻿html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Earthlings.land - Ask Anything</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0a0c0f;--surface:#111418;--border:#2a2318;--gold:#c8923a;--gold-lt:#e8b96a;--gold-dim:#7a5520;--steam:#4a9eba;--text:#d4c9b0;--muted:#7a7060;--radius:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:"Crimson Pro",serif;font-size:17px;line-height:1.65;overflow:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 10%,rgba(200,146,58,.06),transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(74,158,186,.05),transparent 60%);pointer-events:none}
+.layout{position:relative;display:flex;flex-direction:column;height:100vh;max-width:820px;margin:0 auto;padding:0 16px}
+header{flex-shrink:0;padding:20px 0 16px;text-align:center;border-bottom:1px solid var(--border)}
+.logo-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:4px}
+.gear{font-size:22px;color:var(--gold-dim);opacity:.6;animation:spin 20s linear infinite}
+.gear.rev{animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{font-family:"Cinzel",serif;font-size:clamp(18px,3.5vw,26px);font-weight:600;color:var(--gold-lt);letter-spacing:.08em;text-shadow:0 0 30px rgba(200,146,58,.3)}
+.tagline{font-size:13px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase}
+.lang-bar{display:flex;justify-content:center;gap:8px;padding:10px 0 0;flex-wrap:wrap}
+.lang-btn{background:none;border:1px solid var(--border);color:var(--muted);font-size:12px;padding:3px 10px;border-radius:20px;cursor:pointer;transition:all .2s}
+.lang-btn:hover,.lang-btn.active{border-color:var(--gold-dim);color:var(--gold)}
+.chat-area{flex:1;overflow-y:auto;padding:20px 0;display:flex;flex-direction:column;gap:16px;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.welcome{text-align:center;padding:32px 20px;animation:fadeUp .6s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.welcome-title{font-family:"Cinzel",serif;font-size:clamp(14px,2.5vw,18px);color:var(--gold);letter-spacing:.06em;margin-bottom:8px}
+.welcome-sub{color:var(--muted);font-size:15px;font-style:italic;margin-bottom:24px}
+.suggestions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.suggestion{background:none;border:1px solid var(--border);color:var(--text);font-size:14px;padding:8px 16px;border-radius:8px;cursor:pointer;transition:all .25s}
+.suggestion:hover{border-color:var(--gold-dim);color:var(--gold-lt);background:rgba(200,146,58,.04)}
+.msg{display:flex;gap:12px;animation:fadeUp .3s ease both}
+.msg.user{flex-direction:row-reverse}
+.avatar{width:32px;height:32px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:2px}
+.msg.user .avatar{background:#16200a;border:1px solid #2a400a;color:#7abc40}
+.msg.ai .avatar{background:#0e1620;border:1px solid #1a2a40;color:var(--steam)}
+.bubble{max-width:78%;padding:12px 16px;border-radius:var(--radius);font-size:16px;line-height:1.65}
+.msg.user .bubble{background:#16200a;border:1px solid #2a400a;border-bottom-right-radius:4px;color:#c8e0a0}
+.msg.ai .bubble{background:#0e1620;border:1px solid #1a2a40;border-bottom-left-radius:4px}
+.bubble a{color:#7dc4e0;text-decoration:none}
+.bubble strong{color:var(--gold-lt)}
+.typing .bubble{display:flex;gap:5px;align-items:center;padding:14px 18px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--steam);animation:pulse 1.2s ease-in-out infinite}
+.dot:nth-child(2){animation-delay:.2s}
+.dot:nth-child(3){animation-delay:.4s}
+@keyframes pulse{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+.input-area{flex-shrink:0;padding:12px 0 20px;border-top:1px solid var(--border)}
+.input-row{display:flex;gap:10px;align-items:flex-end;margin-top:12px}
+textarea{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-size:16px;line-height:1.5;padding:12px 16px;resize:none;min-height:48px;max-height:140px;transition:border-color .2s}
+textarea:focus{outline:none;border-color:var(--gold-dim)}
+textarea::placeholder{color:var(--muted);font-style:italic}
+.send-btn{background:linear-gradient(135deg,#8a6020,#c8923a);border:none;border-radius:var(--radius);color:#1a0e00;font-family:"Cinzel",serif;font-size:13px;font-weight:600;letter-spacing:.08em;padding:12px 20px;cursor:pointer;transition:all .2s;height:48px}
+.send-btn:hover:not(:disabled){background:linear-gradient(135deg,#a07028,#e8b050);transform:translateY(-1px)}
+.send-btn:disabled{opacity:.4;cursor:not-allowed}
+.footer-note{text-align:center;font-size:11px;color:var(--muted);margin-top:8px}
+.footer-note a{color:var(--gold-dim);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="layout">
+<header>
+<div class="logo-row"><span class="gear">&#9881;</span><h1>EARTHLINGS.LAND</h1><span class="gear rev">&#9881;</span></div>
+<div class="tagline">Ask the Oracle anything about the world</div>
+<div class="lang-bar">
+<button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+<button class="lang-btn" onclick="setLang('fi',this)">FI</button>
+<button class="lang-btn" onclick="setLang('de',this)">DE</button>
+<button class="lang-btn" onclick="setLang('es',this)">ES</button>
+<button class="lang-btn" onclick="setLang('fr',this)">FR</button>
+<button class="lang-btn" onclick="setLang('nl',this)">NL</button>
+<button class="lang-btn" onclick="setLang('ja',this)">JA</button>
+<button class="lang-btn" onclick="setLang('pt',this)">PT</button>
+</div>
+</header>
+<div class="chat-area" id="chat"></div>
+<div class="input-area">
+<div class="input-row">
+<textarea id="inp" rows="1" placeholder="Ask anything about Earthlings..." onkeydown="hk(event)" oninput="ar(this)"></textarea>
+<button class="send-btn" id="sb" onclick="send()">TRANSMIT</button>
+</div>
+<div class="footer-note">Not financial advice &mdash; DYOR &nbsp;&middot;&nbsp;<a href="https://earthlings.land" target="_blank">earthlings.land</a>&nbsp;&middot;&nbsp;<a href="https://discord.com/invite/Earthlings-land" target="_blank">Discord</a></div>
+</div>
+</div>
+<script>
+var H=[],lang='en',busy=false;
+var LP={en:'Reply in English.',fi:'Vastaa suomeksi.',de:'Auf Deutsch.',es:'En espanol.',fr:'En francais.',nl:'In het Nederlands.',ja:'日本語で。',pt:'Em portugues.'};
+var SG={en:['What is Earthlings.land?','How do I get started?','What is $STEAM token?','What NFTs exist?','Is it free to play?','What is Hedera?'],fi:['Mika on Earthlings.land?','Miten mukaan?','Mika on $STEAM?','Mita NFTeja on?','Onko ilmainen?','Mika on Hedera?']};
+var WL={en:{t:'Welcome, Earthling',s:'The Oracle awaits your questions.'},fi:{t:'Tervetuloa, Earthling',s:'Oracle odottaa kysymyksiasi.'},de:{t:'Willkommen, Earthling',s:'Das Orakel erwartet deine Fragen.'},es:{t:'Bienvenido, Earthling',s:'El Oraculo espera tus preguntas.'},fr:{t:'Bienvenue, Earthling',s:"L Oracle attend vos questions."},nl:{t:'Welkom, Earthling',s:'Het Orakel wacht op uw vragen.'},ja:{t:'youkoso Earthling',s:'Oraacle ga shitsumon wo matte imasu.'},pt:{t:'Bem-vindo, Earthling',s:'O Oraculo aguarda suas perguntas.'}};
+function sw(){var w=WL[lang]||WL.en;var s=(SG[lang]||SG.en).map(function(t){return '<button class="suggestion" onclick="us(this.textContent)">'+t+'</button>';}).join('');document.getElementById('chat').innerHTML='<div class="welcome"><div class="welcome-title">'+w.t+'</div><div class="welcome-sub">'+w.s+'</div><div class="suggestions">'+s+'</div></div>';}
+sw();
+function setLang(l,b){lang=l;document.querySelectorAll('.lang-btn').forEach(function(x){x.classList.remove('active');});b.classList.add('active');if(!H.length)sw();}
+function us(t){document.getElementById('inp').value=t;send();}
+function hk(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}}
+function ar(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,140)+'px';}
+async function send(){
+  if(busy)return;
+  var el=document.getElementById('inp');
+  var txt=el.value.trim();
+  if(!txt)return;
+  var wc=document.querySelector('.welcome');
+  if(wc)wc.remove();
+  el.value='';el.style.height='auto';
+  H.push({role:'user',content:txt+' ['+(LP[lang]||'')+']'});
+  am('user',txt);
+  var tid=at();
+  busy=true;document.getElementById('sb').disabled=true;
+  try{
+    var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:H})});
+    var d=await r.json();
+    rt(tid);
+    if(d.error){am('ai','Transmission failed. Try again.');H.pop();}
+    else{H.push({role:'assistant',content:d.reply});am('ai',fmt(d.reply));}
+  }catch(e){rt(tid);am('ai','Connection lost. Try again.');H.pop();}
+  busy=false;document.getElementById('sb').disabled=false;el.focus();
+}
+function fmt(t){return t.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>').replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank">$1</a>');}
+function am(role,html){var c=document.getElementById('chat');var d=document.createElement('div');d.className='msg '+role;d.innerHTML='<div class="avatar">'+(role==='user'?'&#10022;':'&#9881;')+'</div><div class="bubble">'+html+'</div>';c.appendChild(d);c.scrollTop=c.scrollHeight;}
+function at(){var c=document.getElementById('chat');var id='tp'+Date.now();var d=document.createElement('div');d.className='msg ai typing';d.id=id;d.innerHTML='<div class="avatar">&#9881;</div><div class="bubble"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';c.appendChild(d);c.scrollTop=c.scrollHeight;return id;}
+function rt(id){var e=document.getElementById(id);if(e)e.remove();}
+</script>
+</body>
+</html>"""
+with open("public/index.html", "w", encoding="utf-8") as f:
+    f.write(html)
+print("ok - " + str(len(html)) + " chars")
