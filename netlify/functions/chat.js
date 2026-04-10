@@ -1,4 +1,4 @@
-﻿const { KNOWLEDGE } = require("../../knowledge");
+const { KNOWLEDGE } = require("../../knowledge");
 
 exports.handler = async function (event, context) {
   if (event.httpMethod === "OPTIONS") {
