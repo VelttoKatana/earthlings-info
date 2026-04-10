@@ -298,57 +298,42 @@ exports.handler = async function(event) {
   if (event.httpMethod !== "POST") return { statusCode: 405, body: "Method Not Allowed" };
 
   try {
-    // Fetch live Hedera data
     let liveData = "";
     try {
       const MIRROR = "https://mainnet-public.mirrornode.hedera.com/api/v1";
 
-      const [tokenRes, poolRes, saucerRes] = await Promise.allSettled([
+      const [tokenRes, poolRes, holdersRes] = await Promise.allSettled([
         fetch(`${MIRROR}/tokens/0.0.3210123`),
-        fetch(`${MIRROR}/balances?account.id=0.0.6020076`),
-        fetch("https://api.saucerswap.finance/tokens/0.0.3210123")
+        fetch(`${MIRROR}/balances?account.id=0.0.6020076&limit=1`),
+        fetch(`${MIRROR}/tokens/0.0.3210123/balances?order=desc&limit=1`)
       ]);
 
-      let holders = null, supply = null, claimPool = null, price = null, volume = null;
+      const parts = [];
 
       if (tokenRes.status === "fulfilled" && tokenRes.value.ok) {
         const t = await tokenRes.value.json();
-        holders = parseInt(t.decimals !== undefined ? t.total_supply : null);
-        supply = t.total_supply;
-        holders = t.custom_fees ? null : null;
-        // Get holder count from token info
-        const tokenData = t;
-        supply = tokenData.total_supply;
+        const decimals = parseInt(t.decimals) || 2;
+        const supply = parseInt(t.total_supply) / Math.pow(10, decimals);
+        parts.push(`STEAM total supply on chain: ${supply.toLocaleString()} STEAM`);
       }
-
-      // Get holder count separately
-      try {
-        const hRes = await fetch(`${MIRROR}/tokens/0.0.3210123/balances?limit=1`);
-        const hData = await hRes.json();
-        // total count not directly available, use links
-      } catch(e) {}
 
       if (poolRes.status === "fulfilled" && poolRes.value.ok) {
         const p = await poolRes.value.json();
-        if (p.balances && p.balances[0]) {
-          claimPool = (p.balances[0].balance / 100).toFixed(0);
+        if (p.balances && p.balances.length > 0) {
+          const bal = parseInt(p.balances[0].balance) / 100;
+          parts.push(`Daily claim pool (wallet 0.0.6020076) current balance: ${bal.toLocaleString()} STEAM remaining`);
         }
       }
 
-      if (saucerRes.status === "fulfilled" && saucerRes.value.ok) {
-        const s = await saucerRes.value.json();
-        price = s.priceUsd || s.price || null;
-        volume = s.volume24h || null;
+      if (holdersRes.status === "fulfilled" && holdersRes.value.ok) {
+        const h = await holdersRes.value.json();
+        if (h.links && h.links.next === null && h.balances) {
+          // can't get total count this way
+        }
       }
 
-      const parts = [];
-      if (supply) parts.push(`STEAM total supply on chain: ${(parseInt(supply)/100).toLocaleString()} STEAM`);
-      if (claimPool) parts.push(`Daily claim pool remaining: ${parseInt(claimPool).toLocaleString()} STEAM`);
-      if (price) parts.push(`Current STEAM price: $${parseFloat(price).toFixed(6)}`);
-      if (volume) parts.push(`24h trading volume: $${parseFloat(volume).toFixed(2)}`);
-
       if (parts.length > 0) {
-        liveData = "\n\n=== LIVE HEDERA DATA (fetched right now) ===\n" + parts.join("\n") + "\nData source: Hedera Mirror Node + SaucerSwap API";
+        liveData = "\n\n=== LIVE ON-CHAIN DATA (fetched right now from Hedera Mirror Node) ===\n" + parts.join("\n") + "\nFor STEAM price check: https://saucerswap.finance or https://mexc.com";
       }
     } catch(e) {
       liveData = "";
