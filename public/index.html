@@ -61,63 +61,154 @@ textarea::placeholder{color:var(--muted);font-style:italic}
 <header>
 <div class="logo-row"><span class="gear">&#9881;</span><h1>EARTHLINGS.LAND</h1><span class="gear rev">&#9881;</span></div>
 <div class="tagline">Ask the Oracle anything about the world</div>
-<div class="lang-bar">
-<button class="lang-btn active" onclick="setLang('en',this)">EN</button>
-<button class="lang-btn" onclick="setLang('fi',this)">FI</button>
-<button class="lang-btn" onclick="setLang('de',this)">DE</button>
-<button class="lang-btn" onclick="setLang('es',this)">ES</button>
-<button class="lang-btn" onclick="setLang('fr',this)">FR</button>
-<button class="lang-btn" onclick="setLang('nl',this)">NL</button>
-<button class="lang-btn" onclick="setLang('ja',this)">JA</button>
-<button class="lang-btn" onclick="setLang('pt',this)">PT</button>
-</div>
+<div class="lang-bar" id="langbar"></div>
 </header>
 <div class="chat-area" id="chat"></div>
 <div class="input-area">
 <div class="input-row">
-<textarea id="inp" rows="1" placeholder="Ask anything about Earthlings..." onkeydown="hk(event)" oninput="ar(this)"></textarea>
-<button class="send-btn" id="sb" onclick="send()">TRANSMIT</button>
+<textarea id="inp" rows="1" placeholder="Ask anything about Earthlings..." onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+<button class="send-btn" id="sb" onclick="sendMsg()">TRANSMIT</button>
 </div>
 <div class="footer-note">Not financial advice &mdash; DYOR &nbsp;&middot;&nbsp;<a href="https://earthlings.land" target="_blank">earthlings.land</a>&nbsp;&middot;&nbsp;<a href="https://discord.com/invite/Earthlings-land" target="_blank">Discord</a></div>
 </div>
 </div>
 <script>
-var H=[],lang='en',busy=false;
-var LP={en:'Reply in English.',fi:'Vastaa suomeksi.',de:'Auf Deutsch.',es:'En espanol.',fr:'En francais.',nl:'In het Nederlands.',ja:'日本語で。',pt:'Em portugues.'};
-var SG={en:['What is Earthlings.land?','How do I get started?','What is $STEAM token?','What NFTs exist?','Is it free to play?','What is Hedera?'],fi:['Mika on Earthlings.land?','Miten mukaan?','Mika on $STEAM?','Mita NFTeja on?','Onko ilmainen?','Mika on Hedera?']};
-var WL={en:{t:'Welcome, Earthling',s:'The Oracle awaits your questions.'},fi:{t:'Tervetuloa, Earthling',s:'Oracle odottaa kysymyksiasi.'},de:{t:'Willkommen, Earthling',s:'Das Orakel erwartet deine Fragen.'},es:{t:'Bienvenido, Earthling',s:'El Oraculo espera tus preguntas.'},fr:{t:'Bienvenue, Earthling',s:"L Oracle attend vos questions."},nl:{t:'Welkom, Earthling',s:'Het Orakel wacht op uw vragen.'},ja:{t:'youkoso Earthling',s:'Oraacle ga shitsumon wo matte imasu.'},pt:{t:'Bem-vindo, Earthling',s:'O Oraculo aguarda suas perguntas.'}};
-function sw(){var w=WL[lang]||WL.en;var s=(SG[lang]||SG.en).map(function(t){return '<button class="suggestion" onclick="us(this.textContent)">'+t+'</button>';}).join('');document.getElementById('chat').innerHTML='<div class="welcome"><div class="welcome-title">'+w.t+'</div><div class="welcome-sub">'+w.s+'</div><div class="suggestions">'+s+'</div></div>';}
-sw();
-function setLang(l,b){lang=l;document.querySelectorAll('.lang-btn').forEach(function(x){x.classList.remove('active');});b.classList.add('active');if(!H.length)sw();}
-function us(t){document.getElementById('inp').value=t;send();}
-function hk(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}}
-function ar(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,140)+'px';}
-async function send(){
-  if(busy)return;
-  var el=document.getElementById('inp');
-  var txt=el.value.trim();
-  if(!txt)return;
-  var wc=document.querySelector('.welcome');
-  if(wc)wc.remove();
-  el.value='';el.style.height='auto';
-  H.push({role:'user',content:txt+' ['+(LP[lang]||'')+']'});
-  am('user',txt);
-  var tid=at();
-  busy=true;document.getElementById('sb').disabled=true;
-  try{
-    var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:H})});
-    var d=await r.json();
-    rt(tid);
-    if(d.error){am('ai','Transmission failed. Try again.');H.pop();}
-    else{H.push({role:'assistant',content:d.reply});am('ai',fmt(d.reply));}
-  }catch(e){rt(tid);am('ai','Connection lost. Try again.');H.pop();}
-  busy=false;document.getElementById('sb').disabled=false;el.focus();
+var chatHistory = [];
+var currentLang = 'en';
+var isBusy = false;
+
+var langPrompts = {en:'Reply in English.',fi:'Vastaa suomeksi.',de:'Auf Deutsch.',es:'En espanol.',fr:'En francais.',nl:'In het Nederlands.',ja:'Japanese.',pt:'Em portugues.'};
+var suggestions = {
+  en:['What is Earthlings.land?','How do I get started?','What is STEAM token?','What NFTs exist?','Is it free to play?','What is Hedera?'],
+  fi:['Mika on Earthlings.land?','Miten mukaan?','Mika on STEAM?','Mita NFTeja on?','Onko ilmainen?','Mika on Hedera?']
+};
+var welcomeText = {
+  en:{t:'Welcome, Earthling',s:'The Oracle awaits your questions.'},
+  fi:{t:'Tervetuloa, Earthling',s:'Oracle odottaa kysymyksiasi.'},
+  de:{t:'Willkommen, Earthling',s:'Das Orakel erwartet deine Fragen.'},
+  es:{t:'Bienvenido, Earthling',s:'El Oraculo espera tus preguntas.'},
+  fr:{t:'Bienvenue, Earthling',s:'L Oracle attend vos questions.'},
+  nl:{t:'Welkom, Earthling',s:'Het Orakel wacht op uw vragen.'},
+  ja:{t:'Welcome Earthling',s:'The Oracle awaits.'},
+  pt:{t:'Bem-vindo, Earthling',s:'O Oraculo aguarda suas perguntas.'}
+};
+var langs = ['en','fi','de','es','fr','nl','ja','pt'];
+
+function buildLangBar() {
+  var bar = document.getElementById('langbar');
+  bar.innerHTML = '';
+  langs.forEach(function(l) {
+    var b = document.createElement('button');
+    b.className = 'lang-btn' + (l === currentLang ? ' active' : '');
+    b.textContent = l.toUpperCase();
+    b.onclick = function() { changeLang(l); };
+    bar.appendChild(b);
+  });
 }
-function fmt(t){return t.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/
-/g,'<br>').replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank">$1</a>');}
-function am(role,html){var c=document.getElementById('chat');var d=document.createElement('div');d.className='msg '+role;d.innerHTML='<div class="avatar">'+(role==='user'?'&#10022;':'&#9881;')+'</div><div class="bubble">'+html+'</div>';c.appendChild(d);c.scrollTop=c.scrollHeight;}
-function at(){var c=document.getElementById('chat');var id='tp'+Date.now();var d=document.createElement('div');d.className='msg ai typing';d.id=id;d.innerHTML='<div class="avatar">&#9881;</div><div class="bubble"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';c.appendChild(d);c.scrollTop=c.scrollHeight;return id;}
-function rt(id){var e=document.getElementById(id);if(e)e.remove();}
+
+function changeLang(l) {
+  currentLang = l;
+  buildLangBar();
+  if (chatHistory.length === 0) showWelcome();
+}
+
+function showWelcome() {
+  var w = welcomeText[currentLang] || welcomeText.en;
+  var sg = suggestions[currentLang] || suggestions.en;
+  var btns = sg.map(function(t) {
+    var b = document.createElement('button');
+    b.className = 'suggestion';
+    b.textContent = t;
+    b.onclick = function() { useSuggestion(t); };
+    return b.outerHTML;
+  }).join('');
+  document.getElementById('chat').innerHTML = '<div class="welcome"><div class="welcome-title">' + w.t + '</div><div class="welcome-sub">' + w.s + '</div><div class="suggestions">' + btns + '</div></div>';
+  document.querySelectorAll('.suggestion').forEach(function(b) {
+    b.onclick = function() { useSuggestion(b.textContent); };
+  });
+}
+
+function useSuggestion(t) {
+  document.getElementById('inp').value = t;
+  sendMsg();
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
+}
+
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 140) + 'px';
+}
+
+function formatReply(t) {
+  t = t.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  t = t.replace(/\n/g, '<br>');
+  t = t.replace(/https?:\/\/[^\s<]+/g, function(url) { return '<a href="' + url + '" target="_blank">' + url + '</a>'; });
+  return t;
+}
+
+function addMsg(role, html) {
+  var chat = document.getElementById('chat');
+  var d = document.createElement('div');
+  d.className = 'msg ' + role;
+  var icon = role === 'user' ? '&#10022;' : '&#9881;';
+  d.innerHTML = '<div class="avatar">' + icon + '</div><div class="bubble">' + html + '</div>';
+  chat.appendChild(d);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function addTyping() {
+  var chat = document.getElementById('chat');
+  var id = 'tp' + Date.now();
+  var d = document.createElement('div');
+  d.className = 'msg ai typing';
+  d.id = id;
+  d.innerHTML = '<div class="avatar">&#9881;</div><div class="bubble"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
+  chat.appendChild(d);
+  chat.scrollTop = chat.scrollHeight;
+  return id;
+}
+
+function removeTyping(id) {
+  var el = document.getElementById(id);
+  if (el) el.remove();
+}
+
+async function sendMsg() {
+  if (isBusy) return;
+  var el = document.getElementById('inp');
+  var txt = el.value.trim();
+  if (!txt) return;
+  var wc = document.querySelector('.welcome');
+  if (wc) wc.remove();
+  el.value = '';
+  el.style.height = 'auto';
+  var lp = langPrompts[currentLang] || '';
+  chatHistory.push({role:'user', content: txt + ' [' + lp + ']'});
+  addMsg('user', txt);
+  var tid = addTyping();
+  isBusy = true;
+  document.getElementById('sb').disabled = true;
+  try {
+    var r = await fetch('/api/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({messages: chatHistory})});
+    var d = await r.json();
+    removeTyping(tid);
+    if (d.error) { addMsg('ai', 'Transmission failed. Try again.'); chatHistory.pop(); }
+    else { chatHistory.push({role:'assistant', content: d.reply}); addMsg('ai', formatReply(d.reply)); }
+  } catch(e) {
+    removeTyping(tid);
+    addMsg('ai', 'Connection lost. Try again.');
+    chatHistory.pop();
+  }
+  isBusy = false;
+  document.getElementById('sb').disabled = false;
+  el.focus();
+}
+
+buildLangBar();
+showWelcome();
 </script>
 </body>
 </html>
