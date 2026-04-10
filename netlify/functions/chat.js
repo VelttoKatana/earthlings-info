@@ -34,7 +34,7 @@ APR by deposit: 1-24,999: 3% / 25,000-49,999: 6% / 50,000-74,999: 9% / 75,000-99
 
 APR AMPLIFIERS:
 Town Plot +3% (1 per account), Founders Card +3% (1 per account), EEC +1.5% (1 per account), City Plot (amplifier).
-STEAM Pins (stackable): Gold +24%, Silver +18%, Copper +15%, Denim +15%, Classic +6%.
+STEAM Pins (stackable): Gold +24% (only 1 Gold Steam Pin exists, ultra rare), Silver +18%, Copper +15%, Denim +15%, Classic +6%.
 
 === DAILY STEAM CLAIM ===
 Claim free STEAM daily at 12:00 PM UTC at earthlings.land. Total pool: 7,574,940 STEAM.
@@ -155,7 +155,7 @@ EARTH-PIN: 0.0.1236771. 5 rarity versions: Classic, Denim, Copper (3), Silver (2
 STEAM Pins are stackable banking APR amplifiers. 1 STEAM/day daily claim.
 
 PIN UTILITIES (rarer pin = stronger effect and faster recharge):
-Steam Pin: banking amplifier. Gold +24%, Silver +18%, Copper +15%, Denim +15%, Classic +6%. Stackable. Capped at 100k STEAM.
+Steam Pin: banking amplifier. Gold +24% (only 1 Gold Steam Pin exists - ultra rare), Silver +18%, Copper +15%, Denim +15%, Classic +6%. Stackable. Capped at 100k STEAM.
 River Pin: own a boat. Features by rarity: navigation, underwater sonar, recovery crane, spyglass.
 Diver Pin: unlock diver suit. Dive deeper, magnetic gloves (attract buried items), flashlights, pressure protection, treasure retrieval.
 King Pin: resistance boost + summons knight to attack opponent. Rarer = stronger attack. Access to special places.
