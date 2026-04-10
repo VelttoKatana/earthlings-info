@@ -91,10 +91,22 @@ EARTH-DEED: 0.0.3160990.
 EARTH-BAGHOLDER: 0.0.4624252. Free mint. Qualified for 15M PhSTEAM airdrop Feb-May 2024.
 PhSTEAM: 0.0.3941507. Swappable 1:1 for STEAM at earthlings.land.
 
-=== BACKPACKS ===
-EARTH-BACKPACK: 0.0.3094720. Base-Pack 40,000 (free airdrop July 2023).
-Swappable limited packs: Air (80), Ice (165), Sea (315), Desert (540), Jungle (765), Earth (1315).
-Each boosts life level in specific terrain and handheld inventory.
+=== BACKPACKS (EARTH-BACKPACK) ===
+Token ID: 0.0.3094720. Traded on SentX.io.
+Base-Pack: 40,000 total supply. Free airdrop July 15 2023 (21,361 dropped).
+NOTE: Backpacks can NO LONGER be swapped. The swap feature is closed.
+Limited edition packs are only available on secondary market (SentX.io).
+
+Pack types and supplies:
+Base-Pack: 40,000 (most common, airdropped free)
+Air-Pack: 80 total. Easy way back from air locations. Boosts handheld inventory.
+Ice-Pack: 165 total. Boosts life level in cold and icy climates.
+Sea-Pack: 315 total. Boosts life level on open waters.
+Desert-Pack: 540 total. Boosts life level in desert terrain.
+Jungle-Pack: 765 total. Boosts life level in jungle and forests.
+Earth-Pack: 1,315 total. Boosts life level in open fields and forests.
+
+All backpacks boost life level in their specific terrain and increase handheld inventory capacity in-game.
 
 === STEAM WATCH ===
 EARTH-SW: 0.0.1127032. Total 2350. Freeze environment to escape danger. Cooldown required.
