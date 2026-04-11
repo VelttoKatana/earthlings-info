@@ -328,15 +328,30 @@ exports.handler = async function(event) {
   try {
     let liveData = "";
     try {
-      const MIRROR = "https://mainnet-public.mirrornode.hedera.com/api/v1";
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 4000);
-      const tokenRes = await fetch(`${MIRROR}/tokens/0.0.3210123`, { signal: controller.signal });
-      clearTimeout(timeout);
-      if (tokenRes.ok) {
-        const t = await tokenRes.json();
-        const supply = Number(BigInt(t.total_supply) / 100n).toLocaleString("en-US");
-        liveData = `\n\n=== LIVE BLOCKCHAIN DATA ===\nSTEAM total minted supply on Hedera right now: ${supply} STEAM\nFor circulating supply and price: https://saucerswap.finance`;
+      const collections = [
+        { id: "0.0.3094720", name: "EARTH-BACKPACK" },
+        { id: "0.0.1236771", name: "EARTH-PIN" },
+        { id: "0.0.1782534", name: "EARTH-AIR Airship" },
+        { id: "0.0.1783008", name: "EARTH-TOWN-EU" },
+        { id: "0.0.3771379", name: "EARTH-LAND-EU" },
+        { id: "0.0.7456115", name: "EARTH-CITY-EU" },
+        { id: "0.0.5503955", name: "EARTH-STEAM-FC Founders Card" },
+      ];
+      const results = [];
+      for (const col of collections) {
+        try {
+          const controller = new AbortController();
+          setTimeout(() => controller.abort(), 2000);
+          const r = await fetch(`https://api.sentx.io/v1/public/market/collection?tokenId=${col.id}`, { signal: controller.signal });
+          if (r.ok) {
+            const d = await r.json();
+            const floor = d?.floorPrice || d?.floor || null;
+            if (floor) results.push(`${col.name} (${col.id}): floor ${floor} HBAR`);
+          }
+        } catch(e) {}
+      }
+      if (results.length > 0) {
+        liveData = "\n\n=== LIVE SENTX FLOOR PRICES ===\n" + results.join("\n");
       }
     } catch(e) {}
 
@@ -344,7 +359,7 @@ exports.handler = async function(event) {
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-api-key": process.env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: "claude-sonnet-4-5", max_tokens: 600, system: KNOWLEDGE + liveData, messages })
+      body: JSON.stringify({ model: "claude-sonnet-4-5", max_tokens: 800, system: KNOWLEDGE + liveData, messages })
     });
     const data = await response.json();
     return { statusCode: 200, headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json" }, body: JSON.stringify({ reply: data.content[0].text }) };
