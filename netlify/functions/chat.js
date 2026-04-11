@@ -328,33 +328,15 @@ exports.handler = async function(event) {
   try {
     let liveData = "";
     try {
-      const SENTX_KEY = process.env.SENTX_API_KEY;
-      if (SENTX_KEY) {
-        const tokenIds = [
-          "0.0.3094720", "0.0.1236771", "0.0.1732956",
-          "0.0.3771379", "0.0.2019409", "0.0.7456115",
-          "0.0.5503955", "0.0.1282534"
-        ];
-        const results = [];
-        for (const id of tokenIds) {
-          try {
-            const controller = new AbortController();
-            setTimeout(() => controller.abort(), 3000);
-            const r = await fetch(`https://api.sentx.io/v1/public/market/collection?tokenId=${id}`, {
-              headers: { "x-api-key": SENTX_KEY },
-              signal: controller.signal
-            });
-            if (r.ok) {
-              const d = await r.json();
-              const name = d?.name || d?.tokenName || id;
-              const floor = d?.floorPrice || d?.floor || "?";
-              results.push(`${name} (${id}): floor ${floor} HBAR`);
-            }
-          } catch(e) {}
-        }
-        if (results.length > 0) {
-          liveData = "\n\n=== LIVE SENTX NFT DATA ===\nAlways use these exact names when mentioning NFTs:\n" + results.join("\n");
-        }
+      const MIRROR = "https://mainnet-public.mirrornode.hedera.com/api/v1";
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 4000);
+      const tokenRes = await fetch(`${MIRROR}/tokens/0.0.3210123`, { signal: controller.signal });
+      clearTimeout(timeout);
+      if (tokenRes.ok) {
+        const t = await tokenRes.json();
+        const supply = Number(BigInt(t.total_supply) / 100n).toLocaleString("en-US");
+        liveData = `\n\n=== LIVE BLOCKCHAIN DATA ===\nSTEAM total minted supply on Hedera right now: ${supply} STEAM\nFor circulating supply and price: https://saucerswap.finance`;
       }
     } catch(e) {}
 
@@ -362,7 +344,7 @@ exports.handler = async function(event) {
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-api-key": process.env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: "claude-sonnet-4-5", max_tokens: 800, system: KNOWLEDGE + liveData, messages })
+      body: JSON.stringify({ model: "claude-sonnet-4-5", max_tokens: 600, system: KNOWLEDGE + liveData, messages })
     });
     const data = await response.json();
     return { statusCode: 200, headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json" }, body: JSON.stringify({ reply: data.content[0].text }) };
