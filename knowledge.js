@@ -283,20 +283,20 @@ STEAM ATH: $0.0794 (Oct 29 2024)
 === STARTER GUIDE - RECOMMENDED NFTs FOR NEW PLAYERS ===
 All NFTs available on SentX.io secondary market. Prices in HBAR fluctuate.
 
-BUDGET START (~50-150 USD):
-Earth-Backpack (EARTH-BACKPACK, 0.0.3094720): Floor ~19 HBAR. Cheapest entry. Boosts handheld inventory capacity.
-Classic Steam Pin (EARTH-PIN, 0.0.1236771): Various designs. Steam Pin Classic gives +6% banking APR. Many under 50 HBAR.
-Earth Stamp (EARTH-STAMP, 0.0.1732956): Affordable collectible. Earns 1 STEAM/day (note: daily claim pool currently depleted).
+BUDGET START 50-150 USD:
+1. Earth-Backpack NFT (token 0.0.3094720): Floor around 19 HBAR. Cheapest entry point. Boosts handheld inventory capacity in-game.
+2. Steam Pin Classic NFT (token 0.0.1236771): Many pin designs available under 50 HBAR. Steam Pin gives plus 6 percent banking APR boost.
+3. Earth Stamp NFT (token 0.0.1732956): Affordable collectible stamp. Available on SentX secondary market.
 
-MID RANGE (~200-500 USD):
-Earth Land Plot (EARTH-LAND-EU, 0.0.3771379): Land in Europe. Large inventory, home base, instant life recharge. Earns 2 STEAM/day.
-Earth Apparatus (EARTH-APPARATUS, 0.0.2019409): Mighty Broom or Daring Rake for combat. Each earns 1 STEAM/day.
-Earth Backpack limited edition (EARTH-BACKPACK): Desert-Pack, Jungle-Pack or Earth-Pack. Terrain life bonuses.
+MID RANGE 200-500 USD:
+1. Earth Land Plot NFT (token 0.0.3771379): Own land in Europe. Large inventory, home base, instant life recharge.
+2. Earth Apparatus NFT (token 0.0.2019409): Combat items - Mighty Broom or Daring Rake. Useful against wild animals.
+3. Limited Edition Backpack NFT (token 0.0.3094720): Desert-Pack, Jungle-Pack or Earth-Pack for terrain bonuses.
 
-OPTIMAL LONG TERM (~1000+ USD):
-Earth City Plot (EARTH-CITY-EU, 0.0.7456115): New Paris city plot. Banking amplifier, 6 STEAM/day, shop/gallery/museum. Buy on SentX secondary.
-Founders Card (EARTH-STEAM-FC, 0.0.5503955): Burns for up to 100,000 STEAM over 20 months OR keep for +3% banking APR and Kabila Plaza access.
-Airship (EARTH-AIR, 0.0.1282534): Essential for long-distance travel. Blitz Air or Black Widow recommended. Earns 1 STEAM/day.
+OPTIMAL LONG TERM 1000 USD and above:
+1. City Plot NFT New Paris (token 0.0.7456115): Prime New Paris real estate. Banking amplifier, shop or gallery or museum location. Buy on SentX secondary.
+2. Founders Card NFT (token 0.0.5503955): Burns for up to 100000 STEAM over 20 months. Keep for plus 3 percent banking APR and Kabila Plaza access.
+3. Airship NFT (token 0.0.1282534): Essential for long travel. Blitz Air or Black Widow recommended.
 
 Always check current floor prices at: https://sentx.io/nft-marketplace/creators/earthlings
 
