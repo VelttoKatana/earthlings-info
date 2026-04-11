@@ -307,7 +307,7 @@ EARTH-AIR Airship (token 0.0.1282534) - Blitz Air or Black Widow for long travel
 Always check current floor prices at: https://sentx.io/nft-marketplace/creators/earthlings
 
 === ASSISTANT RULES ===
-Never give financial advice or price predictions. Always say DYOR. When answering questions about which NFTs to buy, ALWAYS copy the exact NFT names from the STARTER GUIDE section: Earth-Backpack NFT, Steam Pin Classic NFT, Earth Stamp NFT, Earth Land Plot NFT, Earth Apparatus NFT, City Plot NFT New Paris, Founders Card NFT, Airship NFT. Never omit the name before the token ID. Always name things explicitly - never use just numbers or percentages without the name. For example: 'Town Plot +3%, Founders Card +3%, EEC +1.5%' not just '(+3%), (+3%), (+1.5%)'. Always start responses with a complete sentence, never mid-sentence.
+Never give financial advice or price predictions. Always say DYOR. CRITICAL RULE: When listing any NFT you MUST always write the name before the token ID. Format: 'Name (token ID)'. The names are: 0.0.3094720=Earth-Backpack, 0.0.1236771=Earth-Pin Steam Pin Classic, 0.0.1732956=Earth-Stamp, 0.0.3771379=Earth-Land-EU Land Plot, 0.0.2019409=Earth-Apparatus, 0.0.7456115=Earth-City-EU City Plot New Paris, 0.0.5503955=Earth-Steam-FC Founders Card, 0.0.1282534=Earth-Air Airship. NEVER list a token ID without its name. Always name things explicitly - never use just numbers or percentages without the name. For example: 'Town Plot +3%, Founders Card +3%, EEC +1.5%' not just '(+3%), (+3%), (+1.5%)'. Always start responses with a complete sentence, never mid-sentence.
 Main game in active development. STEAM RUNNER is live now.
 Most current info is in Discord. Always check official channels.
 Banking at earthlings.land/?page=rewardsbanking (min 1 STEAM, daily rewards).
@@ -328,30 +328,15 @@ exports.handler = async function(event) {
   try {
     let liveData = "";
     try {
-      const collections = [
-        { id: "0.0.3094720", name: "EARTH-BACKPACK" },
-        { id: "0.0.1236771", name: "EARTH-PIN" },
-        { id: "0.0.1782534", name: "EARTH-AIR Airship" },
-        { id: "0.0.1783008", name: "EARTH-TOWN-EU" },
-        { id: "0.0.3771379", name: "EARTH-LAND-EU" },
-        { id: "0.0.7456115", name: "EARTH-CITY-EU" },
-        { id: "0.0.5503955", name: "EARTH-STEAM-FC Founders Card" },
-      ];
-      const results = [];
-      for (const col of collections) {
-        try {
-          const controller = new AbortController();
-          setTimeout(() => controller.abort(), 2000);
-          const r = await fetch(`https://api.sentx.io/v1/public/market/collection?tokenId=${col.id}`, { signal: controller.signal });
-          if (r.ok) {
-            const d = await r.json();
-            const floor = d?.floorPrice || d?.floor || null;
-            if (floor) results.push(`${col.name} (${col.id}): floor ${floor} HBAR`);
-          }
-        } catch(e) {}
-      }
-      if (results.length > 0) {
-        liveData = "\n\n=== LIVE SENTX FLOOR PRICES ===\n" + results.join("\n");
+      const MIRROR = "https://mainnet-public.mirrornode.hedera.com/api/v1";
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 4000);
+      const tokenRes = await fetch(`${MIRROR}/tokens/0.0.3210123`, { signal: controller.signal });
+      clearTimeout(timeout);
+      if (tokenRes.ok) {
+        const t = await tokenRes.json();
+        const supply = Number(BigInt(t.total_supply) / 100n).toLocaleString("en-US");
+        liveData = `\n\n=== LIVE BLOCKCHAIN DATA ===\nSTEAM total minted supply on Hedera right now: ${supply} STEAM\nFor circulating supply and price: https://saucerswap.finance`;
       }
     } catch(e) {}
 
@@ -359,7 +344,7 @@ exports.handler = async function(event) {
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-api-key": process.env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: "claude-sonnet-4-5", max_tokens: 800, system: KNOWLEDGE + liveData, messages })
+      body: JSON.stringify({ model: "claude-sonnet-4-5", max_tokens: 600, system: KNOWLEDGE + liveData, messages })
     });
     const data = await response.json();
     return { statusCode: 200, headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json" }, body: JSON.stringify({ reply: data.content[0].text }) };
