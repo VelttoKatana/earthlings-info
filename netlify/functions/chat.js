@@ -302,11 +302,14 @@ exports.handler = async function(event) {
     let liveData = "";
     try {
       const MIRROR = "https://mainnet-public.mirrornode.hedera.com/api/v1";
-      const tokenRes = await fetch(`${MIRROR}/tokens/0.0.3210123`);
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 4000);
+      const tokenRes = await fetch(`${MIRROR}/tokens/0.0.3210123`, { signal: controller.signal });
+      clearTimeout(timeout);
       if (tokenRes.ok) {
         const t = await tokenRes.json();
-        const supply = parseInt(t.total_supply) / 100;
-        liveData = `\n\n=== LIVE ON-CHAIN DATA (Hedera Mirror Node) ===\nSTEAM total supply on chain right now: ${supply.toLocaleString()} STEAM\nFor current price: https://saucerswap.finance or https://mexc.com`;
+        const supply = Number(BigInt(t.total_supply) / 100n).toLocaleString("en-US");
+        liveData = `\n\n=== LIVE BLOCKCHAIN DATA ===\nSTEAM total minted supply on Hedera right now: ${supply} STEAM\nFor circulating supply and price: https://saucerswap.finance`;
       }
     } catch(e) {}
 
