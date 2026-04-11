@@ -290,20 +290,19 @@ Earth-Town-EU, Earth-Village-EU, Earth-SW Steam Watch, Earth-Boss Ride.
 === STARTER GUIDE - RECOMMENDED NFTs FOR NEW PLAYERS ===
 All NFTs available on SentX.io secondary market. Prices in HBAR fluctuate.
 
-BUDGET START 50-150 USD:
-1. Earth-Backpack NFT (token 0.0.3094720): Floor around 19 HBAR. Cheapest entry point. Boosts handheld inventory capacity in-game.
-2. Steam Pin Classic NFT (token 0.0.1236771): Many pin designs available under 50 HBAR. Steam Pin gives plus 6 percent banking APR boost.
-3. Earth Stamp NFT (token 0.0.1732956): Affordable collectible stamp. Available on SentX secondary market.
+BUDGET START 50-150 USD - recommended NFTs:
+EARTH-BACKPACK (token 0.0.3094720) - floor around 19 HBAR - boosts handheld inventory
+EARTH-PIN Steam Pin Classic (token 0.0.1236771) - under 50 HBAR - gives +6% banking APR
+EARTH-STAMP (token 0.0.1732956) - affordable collectible on SentX
 
-MID RANGE 200-500 USD:
-1. Earth Land Plot NFT (token 0.0.3771379): Own land in Europe. Large inventory, home base, instant life recharge.
-2. Earth Apparatus NFT (token 0.0.2019409): Combat items - Mighty Broom or Daring Rake. Useful against wild animals.
-3. Limited Edition Backpack NFT (token 0.0.3094720): Desert-Pack, Jungle-Pack or Earth-Pack for terrain bonuses.
+MID RANGE 200-500 USD - recommended NFTs:
+EARTH-LAND-EU Land Plot (token 0.0.3771379) - land in Europe, home base, large inventory
+EARTH-APPARATUS Mighty Broom or Daring Rake (token 0.0.2019409) - combat items
 
-OPTIMAL LONG TERM 1000 USD and above:
-1. City Plot NFT New Paris (token 0.0.7456115): Prime New Paris real estate. Banking amplifier, shop or gallery or museum location. Buy on SentX secondary.
-2. Founders Card NFT (token 0.0.5503955): Burns for up to 100000 STEAM over 20 months. Keep for plus 3 percent banking APR and Kabila Plaza access.
-3. Airship NFT (token 0.0.1282534): Essential for long travel. Blitz Air or Black Widow recommended.
+LONG TERM 1000+ USD - recommended NFTs:
+EARTH-CITY-EU City Plot New Paris (token 0.0.7456115) - banking amplifier, shop location
+EARTH-STEAM-FC Founders Card (token 0.0.5503955) - burns for 100000 STEAM or +3% APR
+EARTH-AIR Airship (token 0.0.1282534) - Blitz Air or Black Widow for long travel
 
 Always check current floor prices at: https://sentx.io/nft-marketplace/creators/earthlings
 
