@@ -290,19 +290,7 @@ function formatReply(t){t=t.replace(/\*\*(.*?)\*\*/g,'<strong></strong>');t=t.re
 function addMsg(role,html){var chat=document.getElementById('chat');var d=document.createElement('div');d.className='msg '+role;var icon=role==='user'?'YOU':'EL';d.innerHTML='<div class="avatar">'+icon+'</div><div class="bubble">'+html+'</div>';chat.appendChild(d);chat.scrollTop=chat.scrollHeight;}
 function addTyping(){var chat=document.getElementById('chat');var id='tp'+Date.now();var d=document.createElement('div');d.className='msg ai typing';d.id=id;d.innerHTML='<div class="avatar">EL</div><div class="bubble"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';chat.appendChild(d);chat.scrollTop=chat.scrollHeight;return id;}
 function removeTyping(id){var el=document.getElementById(id);if(el)el.remove();}
-async function fetchLiveData() {
-  try {
-    const r = await fetch("https://mainnet-public.mirrornode.hedera.com/api/v1/tokens/0.0.3210123");
-    if (!r.ok) return "";
-    const t = await r.json();
-    const supply = Number(BigInt(t.total_supply) / 100n).toLocaleString("en-US");
-    return `[LIVE HEDERA DATA: STEAM total minted supply = ${supply} STEAM as of right now]`;
-  } catch(e) { return ""; }
-}
-
-async function sendMsg(){if(isBusy)return;var el=document.getElementById('inp');var txt=el.value.trim();if(!txt)return;var wc=document.querySelector('.welcome');if(wc)wc.remove();el.value='';el.style.height='auto';var lp=langPrompts[currentLang]||'';const live = await fetchLiveData();
-  const ctx = live ? live + ' ' : '';
-  chatHistory.push({role:'user',content:ctx+txt+' ['+lp+']'});addMsg('user',txt);var tid=addTyping();isBusy=true;document.getElementById('sb').disabled=true;try{var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory})});var d=await r.json();removeTyping(tid);if(d.error){addMsg('ai','Something went wrong. Try again.');chatHistory.pop();}else{chatHistory.push({role:'assistant',content:d.reply});addMsg('ai',formatReply(d.reply));}}catch(e){removeTyping(tid);addMsg('ai','Connection lost. Try again.');chatHistory.pop();}isBusy=false;document.getElementById('sb').disabled=false;el.focus();}
+async function sendMsg(){if(isBusy)return;var el=document.getElementById('inp');var txt=el.value.trim();if(!txt)return;var wc=document.querySelector('.welcome');if(wc)wc.remove();el.value='';el.style.height='auto';var lp=langPrompts[currentLang]||'';chatHistory.push({role:'user',content:txt+' ['+lp+']'});addMsg('user',txt);var tid=addTyping();isBusy=true;document.getElementById('sb').disabled=true;try{var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory})});var d=await r.json();removeTyping(tid);if(d.error){addMsg('ai','Something went wrong. Try again.');chatHistory.pop();}else{chatHistory.push({role:'assistant',content:d.reply});addMsg('ai',formatReply(d.reply));}}catch(e){removeTyping(tid);addMsg('ai','Connection lost. Try again.');chatHistory.pop();}isBusy=false;document.getElementById('sb').disabled=false;el.focus();}
 buildLangBar();showWelcome();
 </script>
 </body>
