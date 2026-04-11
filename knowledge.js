@@ -280,6 +280,22 @@ Banking APR base: ~6.6% (varies with deposit amount and amplifiers)
 STEAM ATH: $0.0794 (Oct 29 2024)
 
 
+
+=== NFT NAME REFERENCE (use these exact names when mentioning token IDs) ===
+0.0.3094720 = Earth-Backpack NFT
+0.0.1236771 = Earth Pin NFT  
+0.0.1732956 = Earth Stamp NFT
+0.0.3771379 = Earth Land Plot NFT
+0.0.2019409 = Earth Apparatus NFT
+0.0.7456115 = City Plot NFT (New Paris)
+0.0.5503955 = Founders Card NFT
+0.0.1282534 = Airship NFT
+0.0.1783008 = Town Plot NFT
+0.0.1783112 = Village Plot NFT
+0.0.1127032 = Steam Watch NFT
+0.0.1368168 = Boss Ride NFT
+0.0.3224535 = Sidekick Animal NFT
+
 === STARTER GUIDE - RECOMMENDED NFTs FOR NEW PLAYERS ===
 All NFTs available on SentX.io secondary market. Prices in HBAR fluctuate.
 
