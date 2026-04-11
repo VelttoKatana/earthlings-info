@@ -276,7 +276,7 @@ Circulating supply (July 2025): ~209M STEAM. As of April 2026 approximately 179-
 Total banked (July 2025): 68,453,972 STEAM ($622,931 USD)
 Community claimed (July 2025): 7,574,940 STEAM
 Wallets holding STEAM (July 2025): 36,346 wallets. Note: this grows over time, check hashscan for current.
-Banking APR base: ~6.6% (varies with deposit amount and amplifiers)
+Banking APR base: ~5.8% (April 2026) (varies with deposit amount and amplifiers)
 STEAM ATH: $0.0794 (Oct 29 2024)
 
 
