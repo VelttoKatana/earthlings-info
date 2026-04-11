@@ -279,6 +279,27 @@ Wallets holding STEAM (July 2025): 36,346 wallets. Note: this grows over time, c
 Banking APR base: ~6.6% (varies with deposit amount and amplifiers)
 STEAM ATH: $0.0794 (Oct 29 2024)
 
+
+=== STARTER GUIDE - RECOMMENDED NFTs FOR NEW PLAYERS ===
+All NFTs available on SentX.io secondary market. Prices in HBAR fluctuate.
+
+BUDGET START (~50-150 USD):
+Earth-Backpack (EARTH-BACKPACK, 0.0.3094720): Floor ~19 HBAR. Cheapest entry. Boosts handheld inventory capacity.
+Classic Steam Pin (EARTH-PIN, 0.0.1236771): Various designs. Steam Pin Classic gives +6% banking APR. Many under 50 HBAR.
+Earth Stamp (EARTH-STAMP, 0.0.1732956): Affordable collectible. Earns 1 STEAM/day (note: daily claim pool currently depleted).
+
+MID RANGE (~200-500 USD):
+Earth Land Plot (EARTH-LAND-EU, 0.0.3771379): Land in Europe. Large inventory, home base, instant life recharge. Earns 2 STEAM/day.
+Earth Apparatus (EARTH-APPARATUS, 0.0.2019409): Mighty Broom or Daring Rake for combat. Each earns 1 STEAM/day.
+Earth Backpack limited edition (EARTH-BACKPACK): Desert-Pack, Jungle-Pack or Earth-Pack. Terrain life bonuses.
+
+OPTIMAL LONG TERM (~1000+ USD):
+Earth City Plot (EARTH-CITY-EU, 0.0.7456115): New Paris city plot. Banking amplifier, 6 STEAM/day, shop/gallery/museum. Buy on SentX secondary.
+Founders Card (EARTH-STEAM-FC, 0.0.5503955): Burns for up to 100,000 STEAM over 20 months OR keep for +3% banking APR and Kabila Plaza access.
+Airship (EARTH-AIR, 0.0.1282534): Essential for long-distance travel. Blitz Air or Black Widow recommended. Earns 1 STEAM/day.
+
+Always check current floor prices at: https://sentx.io/nft-marketplace/creators/earthlings
+
 === ASSISTANT RULES ===
 Never give financial advice or price predictions. Always say DYOR. Always name things explicitly - never use just numbers or percentages without the name. For example: 'Town Plot +3%, Founders Card +3%, EEC +1.5%' not just '(+3%), (+3%), (+1.5%)'. Always start responses with a complete sentence, never mid-sentence.
 Main game in active development. STEAM RUNNER is live now.
